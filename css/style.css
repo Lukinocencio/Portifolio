@@ -1,0 +1,99 @@
+@import url('https://fonts.cdnfonts.com/css/jetbrains-mono');
+
+* {
+    box-sizing: border-box;
+    font-family: 'JetBrains Mono', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f8f9fa; /* Cor de fundo suave */
+    color: #343a40; /* Cor do texto principal */
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px; /* Adicione uma largura máxima para evitar que o conteúdo se estenda muito em telas grandes */
+    margin: 0 auto;
+}
+
+header {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0; /* Maior espaço acima e abaixo do cabeçalho */
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.8em;
+}
+
+.navbarlista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbarlista li {
+    margin-right: 20px;
+}
+
+.navbarlista a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbarlista a:hover {
+    color: #ffc107; /* Cor alterada ao passar o mouse sobre o link */
+}
+
+section {
+    margin: 40px 0; /* Maior espaço acima e abaixo de cada seção */
+}
+
+h2 {
+    color: #343a40;
+    border-bottom: 2px solid #007bff; /* Linha de separação sob os títulos */
+    padding-bottom: 5px;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: #007bff; /* Linha de separação entre as seções */
+    margin-top: 20px;
+}
+
+.projetos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.projeto {
+    width: calc(50% - 20px); /* Dois projetos por linha com espaçamento entre eles */
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.direitos-reservados {
+    margin-top: 20px;
+}
