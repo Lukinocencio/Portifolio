@@ -8,23 +8,22 @@
     text-align: center;
     margin: 0 auto 6rem;
 }
-.projects ul li{
+.projects ul li {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 4rem;
 }
 
-.projects ul li.projects__reversed-list{
+.projects ul li.projects__reversed-list {
     flex-direction: row-reverse;
-
 }
 
-.projects ul li:not(:last-of-type){
+.projects ul li:not(:last-of-type) {
     margin-bottom: 12rem;
 }
 
-.projects ul li .image img{
+.projects ul li .image img {
     width: 100%;
     min-width: 40rem;
     max-width: 47rem;
@@ -44,4 +43,18 @@
     text-decoration: underline;
 }
 
+/* Configurações para dispositivos como computadores, tablets e smartphones com telas coloridas e com resolução adequada */
+@media only screen and (max-width: 768px) {
+    .projects ul li,
+    .projects ul li.projects__reversed-list {
+        flex-direction: column;
+    }
+
+    .projects ul li .projects__info {
+        max-width: 66rem;
+    }
+    .projects ul li .image img {
+        min-width: auto;
+    }
+}
 

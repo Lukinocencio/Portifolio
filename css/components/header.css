@@ -52,3 +52,15 @@ header .header__right .header__image .background{
     right: -2.5rem;
     z-index: -1;
 }
+
+/* Configurações para dispositivos como computadores, tablets e smartphones com telas coloridas e com resolução adequada */
+@media only screen and (max-width: 768px) {
+    header {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    header .header__left p {
+        margin: 2rem auto 4rem;
+    }
+
+}
