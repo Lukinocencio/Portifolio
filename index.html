@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Titulo -->
-    <title>LFrança Portifólio</title>
+    <title>Lucas Inocêncio Portifólio</title>
     <!-- CSS -->
     <link rel="stylesheet" href="/css/extends.css">
     <!-- Fonts -->
     <link href="https://fonts.cdnfonts.com/css/jetbrains-mono" rel="stylesheet">
                 
 </head>
+
 <body>
+
     <!-- Navbar -->
+    
     <nav class="navbar">
-        <!-- max-width e mb-0 são classes auxiliares -->
+        <!-- max-width e mb-0 são classes auxiliares | width e height são definidos inline para economizar tempo sem se preocupar com a classe max-width -->
         <div class="navbar__content max-width mb-0"> 
             <a href="/">
-                <img src="/img/logo.jpg" width="70rem" height="70rem" alt="Lucas França">
+                <img src="/img/logo.png" width="70rem" height="70rem" alt="Lucas França">
             </a>
             <ul class="navbar__links">
                 <li><a href="#header">Início</a></li>
@@ -27,7 +30,7 @@
                 <li><a href="#footer">Contato</a></li>
             </ul>
             <div class="navbar__mobile">
-                <img src="/assets/menu.svg" alt="Menu" class="burger">
+                <img src="/img/menu.svg" alt="Menu" class="burger">
                 <ul class="mobile__links">
                     <li><a href="#header">Início</a></li>
                     <li><a href="#about">Sobre</a></li>
@@ -40,9 +43,10 @@
     </nav>
 
     <!-- Header -->
+
     <header id="header" class="max-width">
         <div class="header__left">
-            <h1>Olá! Sou Lucas Inocêncio de França, desenvolvedor Full-Stack!</h1>
+            <h1>Meu nome é Lucas França, e sou um desenvolvedor Full-Stack!</h1>
             <p>
                 Tenho 20 anos e tenho grande interesse na área de cibersegurança, porém, ainda estou trilhando meu caminho, e espero que você possa participar dele!
                 Apaixonado em pensar nas melhores soluções de problemas reais para os usuários.
@@ -52,23 +56,24 @@
         <div class="header__right">
             <div class="header__image">
                 <img src="/img/lfrancatablet.jpg" alt="Lucas Inocêncio de França" class="lucas" />
-                <img src="/assets/abstract.svg" alt="background" class="background" />
+                <img src="/img/abstract.svg" alt="background" class="background" />
             </div>
         </div>
     </header>
 
     <!-- Sobre Mim -->
+
     <section id="about" class="about max-width">
         <div class="about__left">
             <h2 class="secondary-title">Além do código: Quem sou eu?</h2>
             <p>
-                Tenho 20 anos e tenho grande interesse na área de cibersegurança, porém, ainda estou trilhando meu caminho, e espero que você possa participar dele!
-                Apaixonado em pensar nas melhores soluções de problemas reais para os usuários.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Perferendis itaque et temporibus at amet quisquam sit dolore aperiam exercitationem quae perspiciatis fugiat illo magni, ad cum ut. 
+                Repudiandae, accusantium facilis!
             </p>
             <ul>
-                <li><a href="https://github.com/Lukinocencio"><img src="/assets/instagram.svg" alt="GitHub de Lucas Inocêncio"></a></li>
-                <li><a href="https://www.linkedin.com/in/lucas-inocêncio-de-frança-1a67a7191/"><img src="/assets/linkedin.svg" alt="LinkedIn de Lucas Inocêncio"></a></li>
-                <li><a href="#"><img src="/assets/facebook.svg" alt="Facebook"></a></li>
+                <li><a href="https://github.com/Lukinocencio"><img src="/img/github.svg" alt="GitHub de Lucas Inocêncio" class="svg-icons"></a></li>
+                <li><a href="https://www.linkedin.com/in/lucas-inocêncio-de-frança-1a67a7191/"><img src="/img/linkedin.svg" alt="LinkedIn de Lucas Inocêncio" class="svg-icons"></a></li>
             </ul>
         </div>
         <div class="about__right">
@@ -94,35 +99,24 @@
         <div class="skills__content max-width">
             <h2 class="tertiary-title">Minha caixa de ferramentas!</h2>
             <p class="description">
-                Descubra minhas ferramentas que utilizo ou já utilizei, portanto, tenho certa habilidade e domínio com elas!
+                Veja abaixo minhas ferramentas e stacks nas quais eu tenho experiência!
             </p>
             <!-- Cada tag <li> é uma seção de habiilidade  -->
             <ul> 
                 <li class="skills__item">
                     <div class="image-container">
-                        <img src="/assets/notebook.png" alt="Desenvolvimento WEB">
+                        <img src="/img/mern-stack.png" alt="Desenvolvimento WEB" class="svg-icons">
                     </div>
                     <h3>
-                        Desenvolvimento WEB
+                        MERN Stack
                     </h3>
                     <p>
-                        Experiência no Desenvolvimento WEB com sites responsivos e tecnologias atuais no mercado!
+                        Experiência no desenvolvimento utilizando MongoDB, ExpressJS, ReactJS, Node.js
                     </p>
                 </li>
                 <li class="skills__item">
                     <div class="image-container">
-                        <img src="/assets/colors.png" alt="WEB Design">
-                    </div>
-                    <h3>
-                        WEB Design
-                    </h3>
-                    <p>
-                        Preparar texto para colocar aqui
-                    </p>
-                </li>
-                <li class="skills__item">
-                    <div class="image-container">
-                        <img src="/assets/phone.png" alt="UX/UI Design">
+                        <img src="/img/colors.png" alt="WEB Design" class="svg-icons">
                     </div>
                     <h3>
                         WEB Design
@@ -133,7 +127,18 @@
                 </li>
                 <li class="skills__item">
                     <div class="image-container">
-                        <img src="/assets/files.png" alt="Gerenciamento de versões">
+                        <img src="/img/phone.png" alt="UX/UI Design" class="svg-icons">
+                    </div>
+                    <h3>
+                        WEB Design
+                    </h3>
+                    <p>
+                        Preparar texto para colocar aqui
+                    </p>
+                </li>
+                <li class="skills__item">
+                    <div class="image-container">
+                        <img src="/img/files.png" alt="Gerenciamento de versões" class="svg-icons">
                     </div>
                     <h3>
                         Gerenciamento de versões
@@ -147,6 +152,7 @@
     </section>
 
     <!-- Projetos -->
+
     <section id="projects" class="projects max-width">
         <div class="projects__content">
             <h2 class="secondary-title">Projetos Pessoais em Destaque</h2>
@@ -158,20 +164,19 @@
             <!-- Cada tag <li> é um projeto -->
             <li>
                 <div class="image">
-                    <img src="/assets/task-manager.png" alt="Gerenciamento de Tarefas">
+                    <img src="/img/task-manager.png" alt="Gerenciamento de Tarefas">
                 </div>
                 <div class="projects__info">
-                    <h3 class="tertiary-title">Sistemas de Gerenciamento de tarefas</h3>
+                    <h3 class="tertiary-title">Plataforma para conectar desenvolvedores</h3>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                        In natus sit adipisci iste cumque, inventore doloremque voluptate impedit non saepe soluta dolorem atque dolores ex? Vitae quae et consectetur voluptas?
+                        Assim que comecei
                     </p>
                     <a href="#">Leia mais &rarr;</a>
                 </div>
             </li>
             <li class="projects__reversed-list">
                 <div class="image">
-                    <img src="/assets/ecommerce.png" alt="ecommerce">
+                    <img src="/img/ecommerce.png" alt="ecommerce">
                 </div>
                 <div class="projects__info">
                     <h3 class="tertiary-title">Sistemas de Gerenciamento de tarefas</h3>
@@ -184,7 +189,7 @@
             </li>
             <li>
                 <div class="image">
-                    <img src="/assets/delivery.png" alt="delivery">
+                    <img src="/img/delivery.png" alt="delivery">
                 </div>
                 <div class="projects__info">
                     <h3 class="tertiary-title">delivery</h3>
@@ -199,6 +204,7 @@
     </section>
 
     <!-- Footer -->
+
     <footer id="footer">
         <div class="footer__content max-width mb-0">
             <h2 class="tertiary-title mb-s">Vamos Conversar?</h2>
@@ -206,13 +212,23 @@
                 Ficarei feliz em saber mais sobre seus projetos e como podemos trabalhar juntos para torná-los realidade.
             </p>
             <div class="footer__contact mb-m">
-                <span class="mb-m">wartazer100@gmail.com</span>
-                <span> +55 (012) 98868-0412</span>
+
+                <div class="tooltip">
+                    <span class="tooltiptext">Clique para copiar o e-mail</span>
+                    <span id="footer-email" class="mb-m" contenteditable="true" onclick="copiarEmail()">luki.inocencio@outlook.com</span>
+                </div>
+
+                <form action="" method="post">
+                    <span>Formulário de contato</span>
+                </form>
+                
             </div>
-            <ul class="mb-l">
-                <li><a href="https://github.com/Lukinocencio"><img src="/assets/instagram.svg" alt="GitHub de Lucas Inocêncio"></a></li>
-                <li><a href="https://www.linkedin.com/in/lucas-inocêncio-de-frança-1a67a7191/"><img src="/assets/linkedin.svg" alt="LinkedIn de Lucas Inocêncio"></a></li>
-                <li><a href="#"><img src="/assets/facebook.svg" alt="Facebook"></a></li>
+            <ul class="mb-s">
+                <p class="mb-s">
+                    Confira minhas redes abaixo:
+                </p>
+                <li><a href="https://github.com/Lukinocencio"><img src="/img/github.svg" alt="GitHub de Lucas Inocêncio" class="svg-icons"></a></li>
+                <li><a href="https://www.linkedin.com/in/lucas-inocêncio-de-frança-1a67a7191/"><img src="/img/linkedin.svg" alt="LinkedIn de Lucas Inocêncio" class="svg-icons"></a></li>
             </ul>
             <p class="footer__copyright">
                 &copy; 2024 Lucas França. Todos os direitos reservados.
@@ -221,6 +237,7 @@
     </footer>
 
     <!-- Script -->
+
     <script src="/js/index.js"></script>
 
 </body>

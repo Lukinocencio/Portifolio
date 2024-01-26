@@ -13,7 +13,18 @@ window.addEventListener('scroll', function() {
     return navbar.classList.remove('active');
 });
 
+// Função para copiar o e-mail ao clicar nele
+function copiarEmail() {
+    var emailSpan = document.getElementById("footer-email");
+    var emailText = emailSpan.textContent || emailSpan.innerText;
 
+    
 
-
-
+    navigator.clipboard.writeText(emailText)
+        .then(() => {
+            console.log("E-mail copiado: " + emailText);
+        })
+        .catch(err => {
+            console.error('Erro ao copiar o e-mail: ', err);
+        });
+}
