@@ -61,6 +61,7 @@ p:not(:last-of-type),
   padding: 1rem 4rem;
   display: inline-block;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 .btn.btn-primary {

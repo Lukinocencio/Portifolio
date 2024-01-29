@@ -1,0 +1,70 @@
+/* Estilização do modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    transition: opacity 0.3s ease; /* Adiciona um efeito de transição */
+}
+
+.modal__content {
+    background-color: var(--white);
+    display: flex; /* Altera para display flex */
+    flex-direction: column; /* Organiza os elementos em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 0.3rem solid var(--primary-color);
+    border-radius: 0.5rem;
+    padding: 2rem; /* Adiciona um espaçamento interno */
+    max-width: 90%; /* Evita que o modal seja maior que a tela */
+    width: 70rem;
+    height: 70rem;
+    line-height: 2.1rem;
+}
+
+.modal .modal__content h2 {
+    margin-top: 0; /* Remove o margin-top para alinhar com os inputs */
+    margin-bottom: 3rem; /* Adiciona um espaçamento abaixo do título */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem; /* Adiciona um espaçamento entre os grupos de input */
+}
+
+.input-group label {
+    margin-bottom: 0.5rem; /* Adiciona um espaçamento abaixo das labels */
+}
+
+.input-group textarea {
+    width: 100%; /* Define a largura da textarea para ocupar todo o espaço disponível */
+    resize: none; /* Impede o redimensionamento da textarea pelo usuário */
+    padding: 0.5rem; /* Adiciona um pequeno espaçamento interno */
+    box-sizing: border-box; /* Mantém a largura total incluindo o padding */
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 1rem;
+    right: 1rem; /* Ajusta a posição do botão de fechar */
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
