@@ -33,31 +33,34 @@
 
 .modal .modal__content h2 {
     margin-top: 0; /* Remove o margin-top para alinhar com os inputs */
-    margin-bottom: 3rem; /* Adiciona um espaçamento abaixo do título */
+    margin-bottom: 3rem; 
 }
 
 .input-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem; /* Adiciona um espaçamento entre os grupos de input */
-}
-
-.input-group label {
-    margin-bottom: 0.5rem; /* Adiciona um espaçamento abaixo das labels */
+    margin-bottom: 1rem; 
 }
 
 .input-group textarea {
-    width: 100%; /* Define a largura da textarea para ocupar todo o espaço disponível */
-    resize: none; /* Impede o redimensionamento da textarea pelo usuário */
-    padding: 0.5rem; /* Adiciona um pequeno espaçamento interno */
-    box-sizing: border-box; /* Mantém a largura total incluindo o padding */
+    width: 100%;
+    resize: none; 
+    padding: 0.5rem; 
+    box-sizing: border-box;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"] {
+    width: 100%; 
+    padding: 0.5rem; /* parei aqui */
+    box-sizing: border-box; 
 }
 
 .close {
-    color: #aaa;
+    color: var(--gray);
     position: absolute;
     top: 1rem;
-    right: 1rem; /* Ajusta a posição do botão de fechar */
+    right: 1rem; 
     font-size: 4rem;
     font-weight: bold;
 }

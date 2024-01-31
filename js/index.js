@@ -53,3 +53,17 @@ document.getElementById('emailForm').addEventListener('submit', function(event) 
     // Fechar o modal após enviar
     document.getElementById('modal').style.display = 'none';
 });
+
+// Máscara para o campo telefone do modal
+const handlePhone = (event) => {
+    let input = event.target
+    input.value = phoneMask(input.value)
+  }
+  
+  const phoneMask = (value) => {
+    if (!value) return ""
+    value = value.replace(/\D/g,'')
+    value = value.replace(/(\d{2})(\d)/,"($1) $2")
+    value = value.replace(/(\d)(\d{4})$/,"$1-$2")
+    return value
+  }
