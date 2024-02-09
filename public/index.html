@@ -19,7 +19,6 @@
     <!-- Navbar -->
 
     <nav class="navbar">
-        <!-- max-width e mb-0 são classes auxiliares | width e height são definidos inline para economizar tempo sem se preocupar com a classe max-width -->
         <div class="navbar__content max-width mb-0">
             <a href="/">
                 <img src="../public/img/lfrancalogo.png" width="70rem" height="70rem" alt="Lucas França">
@@ -224,19 +223,21 @@
 
                 <button id="openModalBtn" class="btn btn-primary">Formulário de contato</button>
 
-                <div id="modal" class="modal">
+                <div id="modal" class="modal modal__open">
                     <div class="modal__content">
                         <span class="close">&times;</span>
                         <h2 class="secondary-title">Entre em contato!</h2>
-                        <form id="emailForm">
+                        <form id="emailForm" class="contact-form" onsubmit="enviaEmail()">
                             
-                            <input type="text" id="name" name="name" class="input-group" placeholder=" Digite seu Nome" maxlength="65" required /><br />
+                            <input type="text" id="name" name="name" class="input__group" placeholder=" Digite seu Nome" maxlength="65" required /><br />
 
-                            <input type="email" id="email" name="email" class="input-group" placeholder=" Digite seu E-mail" maxlength="255" required /><br />
+                            <input type="email" id="email" name="email" class="input__group" placeholder=" Digite seu E-mail" maxlength="255" required /><br />
 
-                            <input type="text" id="assunto" name="assunto" class="input-group" placeholder=" Digite o Assunto" maxlength="65" required /><br />
+                            <input type="tel" id="tel" name="tel" class="input__group" placeholder=" Digite seu Telefone" maxlength="15" onkeyup="handlePhone(event)" required /><br />
 
-                            <textarea id="message" name="message" class="input-group" spellcheck="true" rows="3" cols="20" placeholder=" Digite sua Mensagem" required /></textarea><br />
+                            <input type="text" id="subject" name="subject" class="input__group" placeholder=" Digite o Assunto" maxlength="65" required /><br />
+
+                            <textarea id="message" name="message" class="input__group" spellcheck="true" placeholder=" Digite sua Mensagem" required /></textarea><br />
 
                             <button type="submit" class="btn btn-primary">Enviar</button>
                         </form>
@@ -260,6 +261,7 @@
 
     <!-- Script -->
     <script src="../public/js/index.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
 </body>
 
