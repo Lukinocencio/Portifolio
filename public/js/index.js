@@ -59,18 +59,18 @@ const handlePhone = (event) => {
     return value
   }
 
-function enviaEmail() {
-    Email.send({
-        Host : "smtp.elasticemail.com",
-        Username : "luki.inocencio@outlook.com",
-        Password : "932485E3848B3EE2AFCE1DF3431F66387E28",
-        To : 'luki.inocencio@outlook.com',
-        From : document.getElementById("email").value,
-        Subject : document.getElementById("subject").value,
-        Body : "Mensagem de: " + document.getElementById("name").value 
-            + "<br> Telefone para contato: " + document.getElementById("tel").value 
-            + "<br> Mensagem: "  + document.getElementById("message").value
-    }).then(
-    message => alert(message)
-    );
-}
+// function enviaEmail() {
+//     Email.send({
+//         Host : "smtp.elasticemail.com",
+//         Username : "luki.inocencio@outlook.com",
+//         Password : "932485E3848B3EE2AFCE1DF3431F66387E28",
+//         To : 'luki.inocencio@outlook.com',
+//         From : document.getElementById("email").value,
+//         Subject : document.getElementById("subject").value,
+//         Body : "Mensagem de: " + document.getElementById("name").value 
+//             + "<br> Telefone para contato: " + document.getElementById("tel").value 
+//             + "<br> Mensagem: "  + document.getElementById("message").value
+//     }).then(
+//     message => alert(message)
+//     );
+// }

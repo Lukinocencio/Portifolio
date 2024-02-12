@@ -2,7 +2,7 @@
   "name": "portifolio",
   "version": "1.0.0",
   "description": "Portifólio pessoal de Lucas Inocêncio de França",
-  "main": "index.html",
+  "main": "app.js",
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js"
@@ -12,5 +12,11 @@
     "Curriculo"
   ],
   "author": "Lucas Inocêncio de França",
-  "license": "ISC"
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2",
+    "nodemailer": "^6.9.9"
+  }
 }
