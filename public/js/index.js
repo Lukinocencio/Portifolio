@@ -30,28 +30,22 @@ function copiarEmail() {
 }
 
 // Configuração do Modal
-
 document.getElementById('openModalBtn').addEventListener('click', function() {
     document.getElementById('modal').style.display = 'block';
 });
-
 document.getElementsByClassName('close')[0].addEventListener('click', function() {
     document.getElementById('modal').style.display = 'none';
 });
-
+// Limpa o formulario ao enviar
 document.getElementById('emailForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
     document.getElementById('modal').style.display = 'none';
 });
-
 // Máscara para o campo telefone do modal
 const handlePhone = (event) => {
     let input = event.target
     input.value = mascaraTelefone(input.value)
   }
-
-  const mascaraTelefone = (value) => {
+const mascaraTelefone = (value) => {
     if (!value) return ""
     value = value.replace(/\D/g,'')
     value = value.replace(/(\d{2})(\d)/,"($1) $2")

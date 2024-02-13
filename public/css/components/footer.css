@@ -1,3 +1,5 @@
+
+
 footer {
     background-color: var(--light-tertiary-color);
 }
@@ -25,6 +27,10 @@ footer .footer__content ul a {
 
 footer .footer__content .footer__copyright {
     font-size: 1.4rem;
+}
+
+#footer-email:focus {
+    outline: none;
 }
 
 /* Estilização da tooltip */
@@ -56,3 +62,5 @@ footer .footer__content .footer__copyright {
     opacity: 1;
     transition: 1s;
 }
+
+

@@ -4,8 +4,8 @@
   "description": "Portifólio pessoal de Lucas Inocêncio de França",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js"
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
   "keywords": [
     "Portifólio",
