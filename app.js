@@ -81,6 +81,7 @@ app.post('/send', (req, res) => {
         html: output
     };
 
+    // Utiliza o transportador e o método para enviar o e-mail 
     transporter.sendMail(mailOptions)
     .then(()=> {
         console.log('Email enviado');

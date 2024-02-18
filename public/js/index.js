@@ -1,4 +1,5 @@
-// Configuração da Navbar
+
+/* Navbar */
 const navbar = document.querySelector('.navbar');
 const mobileVavbar = document.querySelector('.navbar__mobile');
 const button = document.querySelector('.burger');
@@ -13,6 +14,8 @@ window.addEventListener('scroll', function() {
 });
 
 
+
+/* Footer */
 // Configuração de copiar email
 function copiarEmail() {
     var emailSpan = document.getElementById("footer-email");
@@ -51,20 +54,4 @@ const mascaraTelefone = (value) => {
     value = value.replace(/(\d{2})(\d)/,"($1) $2")
     value = value.replace(/(\d)(\d{4})$/,"$1-$2")
     return value
-  }
-
-// function enviaEmail() {
-//     Email.send({
-//         Host : "smtp.elasticemail.com",
-//         Username : "luki.inocencio@outlook.com",
-//         Password : "932485E3848B3EE2AFCE1DF3431F66387E28",
-//         To : 'luki.inocencio@outlook.com',
-//         From : document.getElementById("email").value,
-//         Subject : document.getElementById("subject").value,
-//         Body : "Mensagem de: " + document.getElementById("name").value 
-//             + "<br> Telefone para contato: " + document.getElementById("tel").value 
-//             + "<br> Mensagem: "  + document.getElementById("message").value
-//     }).then(
-//     message => alert(message)
-//     );
-// }
+}
