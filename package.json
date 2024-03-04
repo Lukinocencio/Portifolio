@@ -4,7 +4,7 @@
   "description": "Portifólio pessoal de Lucas Inocêncio de França",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon -e html,handlebars,hbs /app.js"
+    "dev": "nodemon app.js"
   },
   "keywords": [
     "Portifólio",
@@ -19,6 +19,6 @@
     "nodemailer": "^6.9.9"
   },
   "devDependencies": {
-    "nodemon": "^3.0.3"
+    "nodemon": "^3.1.0"
   }
 }
