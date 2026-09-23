@@ -1,54 +1,54 @@
 .projects {
     margin-bottom: 10rem;
     scroll-margin-top: 15rem;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 .projects .projects__content {
     max-width: 56rem;
     text-align: center;
     margin: 0 auto 4rem;
+    padding: 0 2rem;
 }
 
-.projects ul {
+.projects-marquee-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 0 4rem 0;
+}
+
+.projects-marquee-content {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 2rem;
-    padding: 2rem 4rem 4rem 4rem;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: var(--secondary-color) var(--light-tertiary-color);
+    gap: 3rem;
+    width: max-content;
+    /* 40 segundos para dar tempo de ler e clicar, pausando no hover */
+    animation: scrollProjects 50s linear infinite;
+    padding-left: 2rem; /* para não começar grudado se a tela for muito grande */
 }
 
-.projects ul::-webkit-scrollbar {
-    height: 10px;
+.projects-marquee-content:hover {
+    animation-play-state: paused;
 }
 
-.projects ul::-webkit-scrollbar-track {
-    background: var(--light-tertiary-color);
-    border-radius: 10px;
-}
-
-.projects ul::-webkit-scrollbar-thumb {
-    background-color: var(--secondary-color);
-    border-radius: 10px;
-}
-
-.projects ul li {
-    scroll-snap-align: center;
-    flex: 0 0 85%;
-    max-width: 450px;
+.projects-marquee-content li {
+    flex: 0 0 350px; /* Cartão de projeto com tamanho fixo */
     display: flex;
     flex-direction: column;
     background: var(--light-tertiary-color);
     border-radius: 1.5rem;
     padding: 2rem;
     box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
 }
 
-.projects ul li .image {
+.projects-marquee-content li:hover {
+    transform: translateY(-10px);
+}
+
+.projects-marquee-content li .image {
     width: 100%;
-    height: 200px;
+    height: 180px;
     margin-bottom: 2rem;
     border-radius: 1rem;
     overflow: hidden;
@@ -58,42 +58,59 @@
     justify-content: center;
 }
 
-.projects ul li .image img {
+.projects-marquee-content li .image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.projects ul li .projects__info {
+.projects-marquee-content li .projects__info {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
-.projects ul li .projects__info h3 {
-    font-size: 1.8rem;
+.projects-marquee-content li .projects__info h3 {
+    font-size: 1.6rem;
     margin-bottom: 1rem;
     color: var(--text-color);
+    white-space: normal;
 }
 
-.projects ul li .projects__info p {
+.projects-marquee-content li .projects__info p {
     margin: 0 0 2rem;
     flex-grow: 1;
-    font-size: 1.4rem;
-    line-height: 1.6;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    white-space: normal;
 }
 
-.projects ul li .projects__info a {
+.projects-marquee-content li .projects__info a {
     font-weight: bold;
-    color: var(--white);
+    color: var(--white) !important;
     background: var(--primary-color);
     padding: 1rem 2rem;
     border-radius: 0.5rem;
     text-align: center;
     transition: background 0.3s ease;
+    display: block;
+    margin-top: auto;
 }
 
-.projects ul li .projects__info a:hover {
+.projects-marquee-content li .projects__info a:hover {
     background: var(--secondary-color);
     text-decoration: none;
+}
+
+/* Como triplicamos a lista (3 blocos idênticos), movemos 33.333% pra esquerda
+   para criar o loop infinito invisível */
+@keyframes scrollProjects {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.3333%); }
+}
+
+@media only screen and (max-width: 768px) {
+    .projects-marquee-content li {
+        flex: 0 0 280px; /* Menor em telas pequenas */
+    }
 }
