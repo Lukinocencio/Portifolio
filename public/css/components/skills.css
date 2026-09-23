@@ -15,26 +15,55 @@
 
 .skills .skills__content ul { 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, ifr));
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap: 2rem;
 }
 
-.skills .skills__content ul li .image-container{ 
+.skills .skills__content ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+}
+
+.skills .skills__content ul li .image-container { 
     background-color: var(--white);
     padding: 2rem;
     border-radius: 50%;
-    width: 7rem;
-    height: 7rem;
+    width: 12rem;
+    height: 12rem;
+    display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 0.4rem 1rem rgb(0,0,0, 0.1);
     margin: 0 auto;
+    overflow: hidden;
 }
 
-.skills .skills__content ul li h3{ 
+.skills .skills__content ul li .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.skills .skills__content ul li h3 { 
     font-size: 1.6rem;
     font-weight: 500;
     margin: 2rem 0 1rem; 
 }
 
+.skills .skills__content ul li .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 15px;
+}
 
+.skills .skills__content ul li .tech-tags span {
+    background: var(--tertiary-color);
+    color: var(--white);
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+}

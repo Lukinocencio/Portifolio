@@ -30,11 +30,11 @@ export default function Navbar() {
           <li><a href="#skills">{t.nav_skills}</a></li>
           <li><a href="#projects">{t.nav_projects}</a></li>
           <li><a href="#footer">{t.nav_contact}</a></li>
-          <li style={{display: 'flex', gap: '10px', alignItems: 'center', marginLeft: '10px'}}>
+          <li style={{display: 'flex', gap: '10px', alignItems: 'center', marginLeft: '10px', whiteSpace: 'nowrap', flexWrap: 'nowrap'}}>
             <button onClick={toggleTheme} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '1.2rem', color: 'var(--text-color)'}}>
               {theme === "light" ? "🌙" : "☀️"}
             </button>
-            <button onClick={() => toggleLanguage(language === "pt" ? "en" : "pt")} style={{background: 'transparent', border: '1px solid var(--text-color)', color: 'var(--text-color)', borderRadius: '4px', padding: '2px 6px', cursor: 'pointer'}}>
+            <button onClick={() => toggleLanguage(language === "pt" ? "en" : "pt")} style={{background: 'transparent', border: '1px solid var(--text-color)', color: 'var(--text-color)', borderRadius: '4px', padding: '2px 6px', cursor: 'pointer', fontWeight: 'bold'}}>
               {language === "pt" ? "EN" : "PT"}
             </button>
           </li>

@@ -1,60 +1,99 @@
-.projetcs {
-    margin-bottom: 16rem;
+.projects {
+    margin-bottom: 10rem;
     scroll-margin-top: 15rem;
 }
 
 .projects .projects__content {
     max-width: 56rem;
     text-align: center;
-    margin: 0 auto 6rem;
+    margin: 0 auto 4rem;
 }
-.projects ul li {
+
+.projects ul {
     display: flex;
-    justify-content: space-between;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 2rem;
+    padding: 2rem 4rem 4rem 4rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-color) var(--light-tertiary-color);
+}
+
+.projects ul::-webkit-scrollbar {
+    height: 10px;
+}
+
+.projects ul::-webkit-scrollbar-track {
+    background: var(--light-tertiary-color);
+    border-radius: 10px;
+}
+
+.projects ul::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+}
+
+.projects ul li {
+    scroll-snap-align: center;
+    flex: 0 0 85%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    background: var(--light-tertiary-color);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.05);
+}
+
+.projects ul li .image {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: var(--white);
+    display: flex;
     align-items: center;
-    gap: 4rem;
-}
-
-.projects ul li.projects__reversed-list {
-    flex-direction: row-reverse;
-}
-
-.projects ul li:not(:last-of-type) {
-    margin-bottom: 12rem;
+    justify-content: center;
 }
 
 .projects ul li .image img {
     width: 100%;
-    min-width: 40rem;
-    max-width: 47rem;
-    height: auto;
-} 
+    height: 100%;
+    object-fit: cover;
+}
 
 .projects ul li .projects__info {
-    max-width: 47rem;
-} 
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.projects ul li .projects__info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
 
 .projects ul li .projects__info p {
-   margin: 1rem 0 4rem;
-} 
+    margin: 0 0 2rem;
+    flex-grow: 1;
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
 
 .projects ul li .projects__info a {
-    font-weight: 500;
-    text-decoration: underline;
+    font-weight: bold;
+    color: var(--white);
+    background: var(--primary-color);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: background 0.3s ease;
 }
 
-/* Configurações para dispositivos como computadores, tablets e smartphones com telas coloridas e com resolução adequada */
-@media only screen and (max-width: 768px) {
-    .projects ul li,
-    .projects ul li.projects__reversed-list {
-        flex-direction: column;
-    }
-
-    .projects ul li .projects__info {
-        max-width: 66rem;
-    }
-    .projects ul li .image img {
-        min-width: auto;
-    }
+.projects ul li .projects__info a:hover {
+    background: var(--secondary-color);
+    text-decoration: none;
 }
-
