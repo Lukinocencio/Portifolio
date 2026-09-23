@@ -1,9 +1,14 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/context/LanguageContext";
+import { useTheme } from "@/context/ThemeContext";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  
+  const { t, language, toggleLanguage } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,13 +25,29 @@ export default function Navbar() {
           <img src="/img/lfrancalogo.png" width="70" height="70" alt="Lucas França" />
         </a>
         <ul className="navbar__links">
-          <li><a href="#header">Início</a></li>
-          <li><a href="#about">Sobre</a></li>
-          <li><a href="#skills">Habilidades</a></li>
-          <li><a href="#projects">Projetos</a></li>
-          <li><a href="#footer">Contato</a></li>
+          <li><a href="#header">{t.nav_home}</a></li>
+          <li><a href="#about">{t.nav_about}</a></li>
+          <li><a href="#skills">{t.nav_skills}</a></li>
+          <li><a href="#projects">{t.nav_projects}</a></li>
+          <li><a href="#footer">{t.nav_contact}</a></li>
+          <li style={{display: 'flex', gap: '10px', alignItems: 'center', marginLeft: '10px'}}>
+            <button onClick={toggleTheme} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '1.2rem', color: 'var(--text-color)'}}>
+              {theme === "light" ? "🌙" : "☀️"}
+            </button>
+            <button onClick={() => toggleLanguage(language === "pt" ? "en" : "pt")} style={{background: 'transparent', border: '1px solid var(--text-color)', color: 'var(--text-color)', borderRadius: '4px', padding: '2px 6px', cursor: 'pointer'}}>
+              {language === "pt" ? "EN" : "PT"}
+            </button>
+          </li>
         </ul>
         <div className={`navbar__mobile ${isMobileOpen ? "active" : ""}`}>
+          <div style={{display: 'flex', gap: '15px', alignItems: 'center', position: 'absolute', right: '60px', top: '25px'}}>
+            <button onClick={toggleTheme} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '1.2rem', color: 'var(--text-color)'}}>
+              {theme === "light" ? "🌙" : "☀️"}
+            </button>
+            <button onClick={() => toggleLanguage(language === "pt" ? "en" : "pt")} style={{background: 'transparent', border: '1px solid var(--text-color)', color: 'var(--text-color)', borderRadius: '4px', padding: '2px 6px', cursor: 'pointer'}}>
+              {language === "pt" ? "EN" : "PT"}
+            </button>
+          </div>
           <img 
             src="/img/menu.svg" 
             alt="Menu" 
@@ -34,11 +55,11 @@ export default function Navbar() {
             onClick={() => setIsMobileOpen(!isMobileOpen)}
           />
           <ul className="mobile__links">
-            <li><a href="#header" onClick={() => setIsMobileOpen(false)}>Início</a></li>
-            <li><a href="#about" onClick={() => setIsMobileOpen(false)}>Sobre</a></li>
-            <li><a href="#skills" onClick={() => setIsMobileOpen(false)}>Habilidades</a></li>
-            <li><a href="#projects" onClick={() => setIsMobileOpen(false)}>Projetos</a></li>
-            <li><a href="#footer" onClick={() => setIsMobileOpen(false)}>Contato</a></li>
+            <li><a href="#header" onClick={() => setIsMobileOpen(false)}>{t.nav_home}</a></li>
+            <li><a href="#about" onClick={() => setIsMobileOpen(false)}>{t.nav_about}</a></li>
+            <li><a href="#skills" onClick={() => setIsMobileOpen(false)}>{t.nav_skills}</a></li>
+            <li><a href="#projects" onClick={() => setIsMobileOpen(false)}>{t.nav_projects}</a></li>
+            <li><a href="#footer" onClick={() => setIsMobileOpen(false)}>{t.nav_contact}</a></li>
           </ul>
         </div>
       </div>

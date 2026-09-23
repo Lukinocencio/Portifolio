@@ -1,49 +1,56 @@
+"use client";
+import { useEffect, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
+
 export default function Projects() {
+  const { t } = useLanguage();
+  const [repos, setRepos] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("https://api.github.com/users/Lukinocencio/repos?type=public&sort=updated&per_page=6")
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setRepos(data);
+        }
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Erro ao buscar projetos do github", err);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <section id="projects" className="projects max-width">
       <div className="projects__content">
-        <h2 className="secondary-title">Projetos Pessoais</h2>
-        <p>
-          Desde ideias abstratas a linhas de códigos, a cursos com projetos práticos e desafios criativos!
-        </p>
+        <h2 className="secondary-title">{t.projects_title}</h2>
+        <p>{t.projects_desc}</p>
       </div>
       <ul>
-        <li>
-          <div className="image">
-            <img src="/img/mernstack.jpg" alt="Plataforma MERN" />
-          </div>
-          <div className="projects__info">
-            <h3 className="tertiary-title">Plataforma para conectar desenvolvedores</h3>
-            <p>
-              Uma plataforma para conectar e conhecer desenvolvedores utilizando as tecnologias MERN Stack!
-            </p>
-            <a href="#">Leia mais &rarr;</a>
-          </div>
-        </li>
-        <li className="projects__reversed-list">
-          <div className="image">
-            <img src="/img/ecommerce.png" alt="ecommerce" />
-          </div>
-          <div className="projects__info">
-            <h3 className="tertiary-title">E-commerce</h3>
-            <p>
-              Uma loja online feita para praticar os princípios do CRUD, também utilizando banco de dados e API de consulta de CEP.
-            </p>
-            <a href="#">Leia mais &rarr;</a>
-          </div>
-        </li>
-        <li>
-          <div className="image">
-            <img src="/img/encryption.png" alt="criptografia" />
-          </div>
-          <div className="projects__info">
-            <h3 className="tertiary-title">Sistema de criptografia</h3>
-            <p>
-              Um programa feito em Python para criptografar, recebendo uma frase e uma chave, e capaz de descriptografar utilizando a chave.
-            </p>
-            <a href="#">Leia mais &rarr;</a>
-          </div>
-        </li>
+        {loading ? (
+          <p style={{ textAlign: "center", width: "100%" }}>Carregando projetos...</p>
+        ) : (
+          repos.map((repo) => (
+            <li key={repo.id}>
+              <div className="image">
+                {/* Fallback pattern for images based on repo topics or just a generic one */}
+                <img src="/img/ecommerce.png" alt="Repositório" />
+              </div>
+              <div className="projects__info">
+                <h3 className="tertiary-title">{repo.name}</h3>
+                <p>{repo.description || "Sem descrição disponível."}</p>
+                <div style={{display: 'flex', gap: '5px', flexWrap: 'wrap', marginBottom: '15px'}}>
+                  {repo.language && <span style={{fontSize: '0.8rem', backgroundColor: 'var(--tertiary-color)', color: 'var(--white)', padding: '2px 8px', borderRadius: '12px'}}>{repo.language}</span>}
+                </div>
+                <a href={repo.html_url} target="_blank" rel="noreferrer">
+                  {t.projects_read_more}
+                </a>
+              </div>
+            </li>
+          ))
+        )}
       </ul>
     </section>
   );

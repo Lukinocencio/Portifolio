@@ -1,58 +1,72 @@
+"use client";
+import { useLanguage } from "@/context/LanguageContext";
+
 export default function Skills() {
+  const { t } = useLanguage();
+
   return (
     <section id="skills" className="skills">
       <div className="skills__content max-width">
-        <h2 className="tertiary-title">Minha caixa de ferramentas!</h2>
-        <p className="description">
-          Veja abaixo minhas ferramentas e stacks nas quais eu tenho experiência!
-        </p>
+        <h2 className="tertiary-title">{t.skills_title}</h2>
+        <p className="description">{t.skills_desc}</p>
         <ul>
-          {/* Front-end & Frameworks */}
           <li className="skills__item">
             <div className="image-container">
-              <img src="/img/mern-stack.png" alt="Desenvolvimento WEB" className="svg-icons" />
+              <img src="/img/ecommerce.png" alt="Front-end" />
             </div>
-            <h3>Front-end & Web</h3>
-            <p>
-              Criação de interfaces web modernas e reativas. <br />
-              <strong>Stack:</strong> React, Tailwind CSS, Bootstrap, MERN Stack.
-            </p>
+            <h3>{t.skills_frontend}</h3>
+            <p>{t.skills_frontend_desc}</p>
+            <div className="tech-tags">
+              <span>React</span>
+              <span>Next.js</span>
+              <span>TailwindCSS</span>
+              <span>Handlebars</span>
+              <span>EJS</span>
+              <span>jQuery</span>
+            </div>
           </li>
-          {/* Back-end e Linguagens */}
           <li className="skills__item">
             <div className="image-container">
-              <img src="/img/wampserver.png" alt="Back-end" className="svg-icons" />
+              <img src="/img/mernstack.jpg" alt="Back-end" />
             </div>
-            <h3>Back-end & Linguagens</h3>
-            <p>
-              Desenvolvimento de servidores robustos e APIs. <br />
-              <strong>Linguagens:</strong> Node.js, Java, Python, TypeScript, JavaScript, PHP.<br />
-              <strong>Frameworks:</strong> Express.js, Laravel.
-            </p>
+            <h3>{t.skills_backend}</h3>
+            <p>{t.skills_backend_desc}</p>
+            <div className="tech-tags">
+              <span>JavaScript</span>
+              <span>PHP</span>
+              <span>Java</span>
+              <span>C</span>
+              <span>Express.js</span>
+            </div>
           </li>
-          {/* Bancos de Dados */}
           <li className="skills__item">
             <div className="image-container">
-              <img src="/img/postman.svg" alt="Banco de Dados" className="svg-icons" />
+              <img src="/img/encryption.png" alt="Database" />
             </div>
-            <h3>Bancos de Dados & APIs</h3>
-            <p>
-              Modelagem, integração e testes de sistemas de dados e rotas. <br />
-              <strong>Bancos:</strong> PostgreSQL, MySQL, MongoDB, Redis.<br />
-              <strong>Ferramentas:</strong> Postman.
-            </p>
+            <h3>{t.skills_database}</h3>
+            <p>{t.skills_database_desc}</p>
+            <div className="tech-tags">
+              <span>MySQL</span>
+              <span>MongoDB</span>
+              <span>Mongoose</span>
+              <span>Sequelize</span>
+              <span>Postman</span>
+            </div>
           </li>
-          {/* DevOps & Ferramentas */}
           <li className="skills__item">
             <div className="image-container">
-              <img src="/img/gitlogo.svg" alt="DevOps e Ferramentas" className="svg-icons" />
+              <img src="/img/wampserver.png" alt="DevOps & Tools" />
             </div>
-            <h3>DevOps, Cloud & Ferramentas</h3>
-            <p>
-              Gerenciamento de código, containers e deploy na nuvem. <br />
-              <strong>Cloud & Infra:</strong> Docker, Azure, Google Cloud Platform (GCP).<br />
-              <strong>Controle:</strong> Git, GitHub, NPM.
-            </p>
+            <h3>{t.skills_devops}</h3>
+            <p>{t.skills_devops_desc}</p>
+            <div className="tech-tags">
+              <span>Git</span>
+              <span>GitHub</span>
+              <span>Linux</span>
+              <span>Vercel</span>
+              <span>Insomnia</span>
+              <span>XAMPP/WampServer</span>
+            </div>
           </li>
         </ul>
       </div>

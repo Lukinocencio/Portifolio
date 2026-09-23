@@ -1,10 +1,20 @@
+"use client";
+import { useLanguage } from "@/context/LanguageContext";
+
 export default function Header() {
+  const { t } = useLanguage();
+
   return (
     <header id="header" className="max-width">
       <div className="header__left">
-        <h1>Meu nome é Lucas França, e sou um desenvolvedor Full-Stack!</h1>
-        <p>Venha conhecer mais sobre mim!</p>
-        <a href="#about" className="btn btn-primary">Saiba Mais!</a>
+        <h1>{t.header_title}</h1>
+        <p>{t.header_subtitle}</p>
+        <div style={{display: 'flex', gap: '15px'}}>
+          <a href="#about" className="btn btn-primary">{t.header_btn_more}</a>
+          <a href="/cv/curriculo.pdf" download className="btn btn-primary" style={{backgroundColor: 'var(--text-color)', color: 'var(--white)'}}>
+            {t.header_btn_cv}
+          </a>
+        </div>
       </div>
       <div className="header__right">
         <div className="header__image">

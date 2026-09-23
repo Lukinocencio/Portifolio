@@ -8,6 +8,9 @@ export const metadata = {
   },
 };
 
+import { ThemeProvider } from "@/context/ThemeContext";
+import { LanguageProvider } from "@/context/LanguageContext";
+
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
@@ -16,7 +19,11 @@ export default function RootLayout({ children }) {
         <link href="https://fonts.cdnfonts.com/css/jetbrains-mono" rel="stylesheet" />
       </head>
       <body>
-        {children}
+        <ThemeProvider>
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
