@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
+import Marquee from "@/components/Marquee";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
@@ -10,6 +11,7 @@ export default function Home() {
     <>
       <Navbar />
       <Header />
+      <Marquee />
       <About />
       <Skills />
       <Projects />

@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="pt-BR">
       <head>
         <link rel="stylesheet" href="/css/extends.css" />
+        <link rel="stylesheet" href="/css/components/marquee.css" />
         <link href="https://fonts.cdnfonts.com/css/jetbrains-mono" rel="stylesheet" />
       </head>
       <body>
