@@ -30,7 +30,7 @@ export default function Navbar() {
         </div>
 
         {/* LINKS (CENTERED) */}
-        <ul className="navbar__links" style={{ flex: '1', display: 'flex', justifyContent: 'center', gap: '2rem', margin: 0, padding: 0 }}>
+        <ul className="navbar__links" style={{ flex: '1', display: 'flex', justifyContent: 'center', gap: '3rem', margin: 0, padding: 0 }}>
           <li><a href="#header">{t.nav_home}</a></li>
           <li><a href="#about">{t.nav_about}</a></li>
           <li><a href="#skills">{t.nav_skills}</a></li>
@@ -38,23 +38,23 @@ export default function Navbar() {
           <li><a href="#footer">{t.nav_contact}</a></li>
         </ul>
 
-        {/* ACTIONS (RIGHT) */}
-        <div className="navbar__actions" style={{ display: 'flex', gap: '15px', alignItems: 'center', flex: '0 0 auto' }}>
-          <button onClick={toggleTheme} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '1.4rem', color: 'var(--text-color)'}}>
+        {/* ACTIONS (RIGHT) - COM MESMO ESPAÇAMENTO */}
+        <div className="navbar__actions" style={{ display: 'flex', gap: '3rem', alignItems: 'center', flex: '0 0 auto' }}>
+          <button onClick={toggleTheme} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '2rem', color: 'var(--text-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0'}}>
             {theme === "light" ? "🌙" : "☀️"}
           </button>
-          <button onClick={() => toggleLanguage(language === "pt" ? "en" : "pt")} style={{background: 'transparent', border: '2px solid var(--text-color)', color: 'var(--text-color)', borderRadius: '6px', padding: '4px 8px', cursor: 'pointer', fontWeight: 'bold', fontSize: '1rem'}}>
+          <button onClick={() => toggleLanguage(language === "pt" ? "en" : "pt")} style={{background: 'transparent', border: '2px solid var(--text-color)', color: 'var(--text-color)', borderRadius: '6px', padding: '4px 12px', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.4rem', minWidth: '45px', textAlign: 'center'}}>
             {language === "pt" ? "EN" : "PT"}
           </button>
         </div>
 
         {/* MOBILE OVERLAY */}
         <div className={`navbar__mobile ${isMobileOpen ? "active" : ""}`}>
-          <div style={{display: 'flex', gap: '15px', alignItems: 'center', position: 'absolute', right: '60px', top: '25px'}}>
-            <button onClick={toggleTheme} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '1.4rem', color: 'var(--text-color)'}}>
+          <div style={{display: 'flex', gap: '2rem', alignItems: 'center', position: 'absolute', right: '60px', top: '25px'}}>
+            <button onClick={toggleTheme} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '2rem', color: 'var(--text-color)'}}>
               {theme === "light" ? "🌙" : "☀️"}
             </button>
-            <button onClick={() => toggleLanguage(language === "pt" ? "en" : "pt")} style={{background: 'transparent', border: '2px solid var(--text-color)', color: 'var(--text-color)', borderRadius: '6px', padding: '4px 8px', cursor: 'pointer', fontWeight: 'bold'}}>
+            <button onClick={() => toggleLanguage(language === "pt" ? "en" : "pt")} style={{background: 'transparent', border: '2px solid var(--text-color)', color: 'var(--text-color)', borderRadius: '6px', padding: '4px 12px', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.4rem'}}>
               {language === "pt" ? "EN" : "PT"}
             </button>
           </div>
