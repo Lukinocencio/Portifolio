@@ -18,10 +18,10 @@ body.dark-theme {
   --gray: #1a1d24;
   --dark-gray: #a0a5b1;
   --black: #ffffff;
-  --primary-color: #f3f6fb;
-  --secondary-color: #a6b1e1;
-  --dark-secondary-color: #3c415c;
-  --tertiary-color: #0f2137;
+  --primary-color: #3b82f6;
+  --secondary-color: #2563eb;
+  --dark-secondary-color: #1e3a8a;
+  --tertiary-color: #3b82f6;
   --light-tertiary-color: #1a1d24;
   --text-color: #f3f6fb;
 }
@@ -30,4 +30,14 @@ body {
   background-color: var(--white);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Força os ícones SVG do github/linkedin ficarem brancos no modo escuro */
+body.dark-theme .svg-icons {
+  filter: invert(1) brightness(2);
+}
+
+/* Força as tags de tecnologia a terem texto sempre branco, pois o fundo é azul (tertiary-color) */
+.tech-tags span {
+  color: #ffffff !important;
 }
