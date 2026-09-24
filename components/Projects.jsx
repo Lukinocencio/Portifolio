@@ -2,6 +2,33 @@
 import { useEffect, useState, useRef } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
+// Função utilitária para extrair e garantir 3 tags para os cards
+function getRepoTags(repo) {
+  const tags = [];
+  
+  if (repo.language) tags.push(repo.language);
+  
+  if (repo.topics && repo.topics.length > 0) {
+    tags.push(...repo.topics);
+  }
+  
+  // Remove duplicatas
+  let uniqueTags = [...new Set(tags)];
+  
+  // Preenche caso faltem tags
+  if (uniqueTags.length === 0) {
+    uniqueTags = ["Software", "Project", "Code"];
+  } else if (uniqueTags.length === 1) {
+    uniqueTags.push(repo.name.length > 5 ? "Development" : "Web");
+    uniqueTags.push("Code");
+  } else if (uniqueTags.length === 2) {
+    uniqueTags.push("Code");
+  }
+  
+  // Retorna no máximo 3 tags
+  return uniqueTags.slice(0, 3);
+}
+
 export default function Projects() {
   const { t } = useLanguage();
   const [repos, setRepos] = useState([]);
@@ -139,12 +166,12 @@ export default function Projects() {
                 <div className="projects__info">
                   <h3 className="tertiary-title">{repo.name}</h3>
                   <p>{repo.description || "Sem descrição disponível."}</p>
-                  <div style={{display: 'flex', gap: '5px', flexWrap: 'wrap', marginBottom: '15px'}}>
-                    {repo.language && (
-                      <span style={{fontSize: '1rem', backgroundColor: 'var(--tertiary-color)', color: '#ffffff', padding: '4px 10px', borderRadius: '12px'}}>
-                        {repo.language}
+                  <div style={{display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '15px'}}>
+                    {getRepoTags(repo).map((tag, i) => (
+                      <span key={i} style={{fontSize: '1rem', backgroundColor: 'var(--tertiary-color)', color: '#ffffff', padding: '4px 10px', borderRadius: '12px'}}>
+                        {tag}
                       </span>
-                    )}
+                    ))}
                   </div>
                   <a href={repo.html_url} target="_blank" rel="noreferrer" draggable="false">
                     {t.projects_read_more}
