@@ -59,5 +59,8 @@ export const en = {
 
   // Contributions
   contributions_title: "My contributions",
-  contributions_desc: "Track my activity and contributions history on GitHub."
+  contributions_desc: "Track my activity and contributions history on GitHub.",
+  calendar_total: "{{count}} contributions in the last year",
+  calendar_less: "Less",
+  calendar_more: "More"
 };
