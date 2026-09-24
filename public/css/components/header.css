@@ -54,16 +54,35 @@ header .header__right .header__image .background {
     z-index: -1;
 }
 
+.header__buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.header__buttons .btn-cv {
+    background-color: var(--text-color);
+    color: var(--white);
+}
+
 @media only screen and (max-width: 768px) {
     header {
         flex-direction: column-reverse;
         text-align: center;
+        gap: 6rem;
     }
     header .header__left p {
         margin: 2rem auto 4rem;
     }
+    header .header__buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
     header .header__right .header__image .lucas {
+        width: 100%;
+        max-width: 300px;
         height: auto;
-        max-height: 470px;
+    }
+    header .header__right .header__image .background {
+        max-width: 120%;
     }
 }

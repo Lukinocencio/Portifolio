@@ -9,9 +9,9 @@ export default function Header() {
       <div className="header__left">
         <h1>{t.header_title}</h1>
         <p>{t.header_subtitle}</p>
-        <div style={{display: 'flex', gap: '15px'}}>
+        <div className="header__buttons">
           <a href="#about" className="btn btn-primary">{t.header_btn_more}</a>
-          <a href="/cv/curriculo.pdf" download className="btn btn-primary" style={{backgroundColor: 'var(--text-color)', color: 'var(--white)'}}>
+          <a href="/cv/curriculo.pdf" download className="btn btn-primary btn-cv">
             {t.header_btn_cv}
           </a>
         </div>

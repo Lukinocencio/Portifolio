@@ -37,13 +37,24 @@
     .about {
         flex-direction: column;
         align-items: center;
+        gap: 2rem;
     }
 
     .about .about__left {
-        max-width: 66rem;
+        max-width: 100%;
         text-align: center;
     }
+    
+    .about .about__left ul {
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
     .about .about__right {
         text-align: center; 
+        max-width: 100%;
     }
 }
