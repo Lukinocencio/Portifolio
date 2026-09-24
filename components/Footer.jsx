@@ -119,7 +119,7 @@ export default function Footer() {
           © {year} Lucas Inocêncio de França. <span className="footer__rights">{t.footer_rights}</span>
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-          <img src="https://komarev.com/ghpvc/?username=Lukinocencio-portfolio-next&label=VISITAS&color=blueviolet" alt="Contador de Visualizações" />
+          <img src="https://komarev.com/ghpvc/?username=Lukinocencio&label=VISITAS&color=blueviolet" alt="Contador de Visualizações" />
         </div>
       </div>
     </footer>

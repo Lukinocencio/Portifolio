@@ -12,12 +12,6 @@ footer .footer__content {
 footer .footer__content .tertiary-title,
 footer .footer__content p.mb-m,
 footer .footer__content .footer__contact span.email {
-    color: var(--primary-color);
-}
-
-body.dark-theme footer .footer__content .tertiary-title,
-body.dark-theme footer .footer__content p.mb-m,
-body.dark-theme footer .footer__content .footer__contact span.email {
     color: #ffffff;
 }
 
@@ -39,6 +33,7 @@ footer .footer__content ul a {
 footer .footer__content .footer__copyright {
     font-size: clamp(1rem, 3.5vw, 1.4rem);
     white-space: nowrap;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* Formulário Inline */
