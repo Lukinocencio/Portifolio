@@ -1,9 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <circle cx="50" cy="50" r="50" fill="#3b82f6" />
-  <path d="M25 35h50v40H25z" fill="#fff" />
-  <path d="M25 35h50v10H25z" fill="#93c5fd" />
-  <circle cx="32" cy="40" r="2" fill="#fff" />
-  <circle cx="38" cy="40" r="2" fill="#fff" />
-  <circle cx="44" cy="40" r="2" fill="#fff" />
-  <path d="M35 55l10 10-10 10M50 75h15" stroke="#3b82f6" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
-</svg>
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">`n  <circle cx="50" cy="50" r="50" fill="#3b82f6" />`n  <rect x="20" y="25" width="60" height="40" rx="3" fill="#fff" />`n  <rect x="24" y="29" width="52" height="32" rx="1" fill="#bfdbfe" />`n  <rect x="24" y="29" width="52" height="6" fill="#3b82f6" />`n  <rect x="24" y="37" width="12" height="24" fill="#93c5fd" />`n  <rect x="38" y="37" width="36" height="10" rx="1" fill="#fff" />`n  <rect x="38" y="49" width="22" height="12" rx="1" fill="#fff" />`n  <rect x="62" y="49" width="12" height="12" rx="1" fill="#fff" />`n  <path d="M45 65 L 55 65 L 58 75 L 42 75 Z" fill="#fff" />`n  <rect x="35" y="75" width="30" height="4" rx="2" fill="#fff" />`n</svg>
