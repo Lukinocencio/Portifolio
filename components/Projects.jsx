@@ -21,17 +21,54 @@ function getRepoTags(repo) {
   return uniqueTags.slice(0, 3);
 }
 
-const placeholders = [
-  "/img/ecommerce.png",
-  "/img/encryption.png",
-  "/img/mern-stack.png",
-  "/img/mernstack.jpg"
-];
+const topicImages = {
+  "react": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=600&auto=format&fit=crop",
+  "node": "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=600&auto=format&fit=crop",
+  "javascript": "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=600&auto=format&fit=crop",
+  "python": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&auto=format&fit=crop",
+  "html": "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?q=80&w=600&auto=format&fit=crop",
+  "css": "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?q=80&w=600&auto=format&fit=crop",
+  "java": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop",
+  "php": "https://images.unsplash.com/photo-1599507593499-a3f7d1d08731?q=80&w=600&auto=format&fit=crop",
+  "go": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?q=80&w=600&auto=format&fit=crop",
+  "c++": "https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=600&auto=format&fit=crop",
+  "typescript": "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=600&auto=format&fit=crop",
+  "sql": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=600&auto=format&fit=crop",
+  "database": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=600&auto=format&fit=crop",
+  "docker": "https://images.unsplash.com/photo-1605745341112-85968b19335b?q=80&w=600&auto=format&fit=crop",
+  "linux": "https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=600&auto=format&fit=crop",
+  "mobile": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600&auto=format&fit=crop",
+  "web": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format&fit=crop",
+  "design": "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=600&auto=format&fit=crop",
+  "api": "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=600&auto=format&fit=crop",
+  "ai": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=600&auto=format&fit=crop",
+  "game": "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=600&auto=format&fit=crop",
+  "cloud": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600&auto=format&fit=crop",
+  "security": "https://images.unsplash.com/photo-1510511459019-5efa7ae194b7?q=80&w=600&auto=format&fit=crop",
+  "default1": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format&fit=crop",
+  "default2": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=600&auto=format&fit=crop",
+  "default3": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop",
+  "default4": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop",
+};
 
 function getRepoImage(repo) {
-  // Returns a consistent placeholder image based on the repo ID
-  const index = (repo.id || 0) % placeholders.length;
-  return placeholders[index];
+  const tags = getRepoTags(repo).map(t => t.toLowerCase());
+  
+  // Try to find a matching tag in topicImages
+  for (const tag of tags) {
+    if (topicImages[tag]) return topicImages[tag];
+  }
+  
+  // Try to match part of the repo name
+  const name = repo.name.toLowerCase();
+  for (const key in topicImages) {
+    if (name.includes(key)) return topicImages[key];
+  }
+  
+  // Fallback to random default based on repo id
+  const defaults = [topicImages.default1, topicImages.default2, topicImages.default3, topicImages.default4];
+  const index = (repo.id || 0) % defaults.length;
+  return defaults[index];
 }
 
 export default function Projects() {
