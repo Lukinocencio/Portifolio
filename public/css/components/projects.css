@@ -38,8 +38,15 @@
     display: flex;
     gap: 3rem;
     width: max-content;
-    padding-left: 2rem;
-    /* A animação infinita agora é controlada via Javascript */
+}
+
+.projects-marquee-content li:first-child {
+    margin-left: 2rem;
+}
+
+.projects-marquee-content li:last-child {
+    margin-right: 2rem;
+
 }
 
 /* Previne que o texto seja selecionado enquanto arrasta */
@@ -134,11 +141,3 @@
 .filtered-view li {
     animation: fade-in 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
-
-.projects-marquee-content::after {
-    content: '';
-    display: block;
-    flex: 0 0 2rem;
-}
-
-.projects-marquee-content { padding-right: 2rem; }
