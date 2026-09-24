@@ -16,13 +16,10 @@ export default function Skills() {
             </div>
             <h3>{t.skills_frontend}</h3>
             <p>{t.skills_frontend_desc}</p>
-            <div className="tech-tags">
-              <span>React</span>
-              <span>Next.js</span>
-              <span>TailwindCSS</span>
-              <span>Handlebars</span>
-              <span>EJS</span>
-              <span>jQuery</span>
+            <div className="tech-tags-container">
+              {['React', 'Next.js', 'TailwindCSS', 'Handlebars', 'EJS', 'jQuery'].map((tag, i) => (
+                <span key={tag} className="tech-badge" style={{ animationDelay: `${i * 0.15}s` }}>{tag}</span>
+              ))}
             </div>
           </li>
           <li className="skills__item">
@@ -31,12 +28,10 @@ export default function Skills() {
             </div>
             <h3>{t.skills_backend}</h3>
             <p>{t.skills_backend_desc}</p>
-            <div className="tech-tags">
-              <span>JavaScript</span>
-              <span>PHP</span>
-              <span>Java</span>
-              <span>C</span>
-              <span>Express.js</span>
+            <div className="tech-tags-container">
+              {['JavaScript', 'PHP', 'Java', 'C', 'Express.js'].map((tag, i) => (
+                <span key={tag} className="tech-badge" style={{ animationDelay: `${i * 0.15}s` }}>{tag}</span>
+              ))}
             </div>
           </li>
           <li className="skills__item">
@@ -45,12 +40,10 @@ export default function Skills() {
             </div>
             <h3>{t.skills_database}</h3>
             <p>{t.skills_database_desc}</p>
-            <div className="tech-tags">
-              <span>MySQL</span>
-              <span>MongoDB</span>
-              <span>Mongoose</span>
-              <span>Sequelize</span>
-              <span>Postman</span>
+            <div className="tech-tags-container">
+              {['MySQL', 'MongoDB', 'Mongoose', 'Sequelize', 'Postman'].map((tag, i) => (
+                <span key={tag} className="tech-badge" style={{ animationDelay: `${i * 0.15}s` }}>{tag}</span>
+              ))}
             </div>
           </li>
           <li className="skills__item">
@@ -59,13 +52,10 @@ export default function Skills() {
             </div>
             <h3>{t.skills_devops}</h3>
             <p>{t.skills_devops_desc}</p>
-            <div className="tech-tags">
-              <span>Git</span>
-              <span>GitHub</span>
-              <span>Linux</span>
-              <span>Vercel</span>
-              <span>Insomnia</span>
-              <span>XAMPP/WampServer</span>
+            <div className="tech-tags-container">
+              {['Git', 'GitHub', 'Linux', 'Vercel', 'Insomnia', 'XAMPP/WampServer'].map((tag, i) => (
+                <span key={tag} className="tech-badge" style={{ animationDelay: `${i * 0.15}s` }}>{tag}</span>
+              ))}
             </div>
           </li>
         </ul>

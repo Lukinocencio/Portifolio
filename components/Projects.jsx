@@ -168,7 +168,7 @@ export default function Projects() {
                   <p>{repo.description || "Sem descrição disponível."}</p>
                   <div className="projects__tags">
                     {getRepoTags(repo).map((tag, i) => (
-                      <span key={i} className="repo-tag" style={{ animationDelay: `${i * 0.15}s` }}>
+                      <span key={i} className="tech-badge" style={{ animationDelay: `${i * 0.15}s` }}>
                         {tag}
                       </span>
                     ))}
