@@ -40,20 +40,20 @@ export default function Navbar() {
 
         {/* ACTIONS (RIGHT) - COM MESMO ESPAÇAMENTO */}
         <div className="navbar__actions" style={{ display: 'flex', gap: '3rem', alignItems: 'center', flex: '0 0 auto' }}>
-          <button onClick={toggleTheme} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '2rem', color: 'var(--text-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0'}}>
+          <button onPointerDown={(e) => e.preventDefault()} onClick={toggleTheme} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '2rem', color: 'var(--text-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0'}}>
             {theme === "light" ? "🌙" : "☀️"}
           </button>
-          <button onClick={() => toggleLanguage(language === "pt" ? "en" : "pt")} style={{background: 'transparent', border: '2px solid var(--text-color)', color: 'var(--text-color)', borderRadius: '6px', padding: '4px 12px', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.4rem', minWidth: '45px', textAlign: 'center'}}>
+          <button onPointerDown={(e) => e.preventDefault()} onClick={() => toggleLanguage(language === "pt" ? "en" : "pt")} style={{background: 'transparent', border: '2px solid var(--text-color)', color: 'var(--text-color)', borderRadius: '6px', padding: '4px 12px', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.4rem', minWidth: '45px', textAlign: 'center'}}>
             {language === "pt" ? "EN" : "PT-BR"}
           </button>
         </div>
 
         {/* MOBILE OVERLAY */}
         <div className={`navbar__mobile ${isMobileOpen ? "active" : ""}`} style={{display: 'flex', gap: '15px', alignItems: 'center'}}>
-            <button onClick={toggleTheme} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '2rem', color: 'var(--text-color)', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <button onPointerDown={(e) => e.preventDefault()} onClick={toggleTheme} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '2rem', color: 'var(--text-color)', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               {theme === "light" ? "🌙" : "☀️"}
             </button>
-            <button onClick={() => toggleLanguage(language === "pt" ? "en" : "pt")} style={{background: 'transparent', border: '2px solid var(--text-color)', color: 'var(--text-color)', borderRadius: '6px', padding: '4px 10px', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.2rem', minWidth: '40px'}}>
+            <button onPointerDown={(e) => e.preventDefault()} onClick={() => toggleLanguage(language === "pt" ? "en" : "pt")} style={{background: 'transparent', border: '2px solid var(--text-color)', color: 'var(--text-color)', borderRadius: '6px', padding: '4px 10px', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.2rem', minWidth: '40px'}}>
               {language === "pt" ? "EN" : "PT"}
             </button>
           <img 
