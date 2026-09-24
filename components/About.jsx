@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import SpotifyPlaying from "./SpotifyPlaying";
 
 export default function About() {
   const { t } = useLanguage();
@@ -46,6 +47,7 @@ export default function About() {
         </h3>
         <p>{t.about_p2}</p>
         <p>{t.about_p3}</p>
+        <SpotifyPlaying />
       </div>
     </section>
   );

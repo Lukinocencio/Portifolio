@@ -7,7 +7,7 @@ export const pt = {
   nav_contact: "Contato",
   
   // Header
-  header_title: "Meu nome é Lucas França, e sou um desenvolvedor Full-Stack!",
+  header_title: "Olá, sou o Lucas França. Pronto para tirarmos sua ideia do papel?",
   header_subtitle: "Venha conhecer mais sobre mim!",
   header_btn_more: "Saiba Mais!",
   header_btn_cv: "Baixar Currículo",
@@ -39,10 +39,10 @@ export const pt = {
 
   // Footer / Contact
   footer_title: "Vamos Conversar?",
-  footer_desc: "Ficarei feliz em conhecer quem está pelo outro lado!",
+  footer_desc: "Ficarei feliz em conhecer você!",
   footer_copy_msg: "Clique para copiar o e-mail",
   footer_copied_msg: "E-mail copiado com sucesso!",
-  footer_btn_contact: "Formulário de contato",
+  footer_btn_contact: "Formulário de Contato",
   footer_social: "Confira minhas redes abaixo:",
   footer_rights: "Todos os direitos reservados.",
   

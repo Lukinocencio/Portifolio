@@ -1,8 +1,22 @@
 "use client";
 import { useLanguage } from "@/context/LanguageContext";
+import { useFilter } from "@/context/FilterContext";
 
 export default function Skills() {
   const { t } = useLanguage();
+  const { selectedSkill, setSelectedSkill } = useFilter();
+
+  const handleSkillClick = (skill) => {
+    if (selectedSkill === skill) {
+      setSelectedSkill(null);
+    } else {
+      setSelectedSkill(skill);
+      const projectsSection = document.getElementById("projects");
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   return (
     <section id="skills" className="skills">

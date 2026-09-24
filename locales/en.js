@@ -7,7 +7,7 @@ export const en = {
   nav_contact: "Contact",
   
   // Header
-  header_title: "My name is Lucas França, and I'm a Full-Stack developer!",
+  header_title: "Hey, I'm Lucas França. Ready to bring your idea to life?",
   header_subtitle: "Come know more about me!",
   header_btn_more: "Learn More!",
   header_btn_cv: "Download CV",

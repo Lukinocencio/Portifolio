@@ -10,6 +10,7 @@ export const metadata = {
 
 import { ThemeProvider } from "@/context/ThemeContext";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { FilterProvider } from "@/context/FilterContext";
 
 export default function RootLayout({ children }) {
   return (
@@ -21,7 +22,9 @@ export default function RootLayout({ children }) {
       <body>
         <ThemeProvider>
           <LanguageProvider>
-            {children}
+            <FilterProvider>
+              {children}
+            </FilterProvider>
           </LanguageProvider>
         </ThemeProvider>
       </body>

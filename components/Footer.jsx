@@ -87,16 +87,16 @@ export default function Footer() {
           {copied && <span style={{color: 'var(--tertiary-color)', marginLeft: '10px'}}>{t.footer_copied_msg}</span>}
         </div>
         <div className="contact-form-container">
-          <h3 style={{color: 'var(--white)', marginBottom: '15px'}}>{t.footer_btn_contact}</h3>
+          <h3 className="contact-title" style={{marginBottom: '15px'}}>{t.footer_btn_contact}</h3>
           <form className="contact-form" onSubmit={handleSubmit}>
             {/* Honeypot: invisível para humanos, bots preenchem isso achando que é campo real */}
             <input type="text" name="_honeypot" style={{ display: 'none' }} tabIndex="-1" autoComplete="off" value={formData._honeypot} onChange={handleInputChange} />
             
-            <input type="text" name="name" placeholder={`${t.modal_name} (Ex: João da Silva)`} required value={formData.name} onChange={handleInputChange} />
-            <input type="email" name="email" placeholder={`${t.modal_email} (Ex: joao@email.com)`} required value={formData.email} onChange={handleInputChange} />
-            <input type="tel" name="tel" placeholder={`${t.modal_tel} (Ex: (11) 99999-9999)`} required value={formData.tel} onChange={handleInputChange} />
-            <input type="text" name="subject" placeholder={`${t.modal_subject} (Ex: Proposta de Freelance)`} required value={formData.subject} onChange={handleInputChange} />
-            <textarea name="message" placeholder={`${t.modal_message} (Ex: Olá Lucas, gostaria de conversar sobre...)`} required rows="4" value={formData.message} onChange={handleInputChange}></textarea>
+            <input type="text" name="name" placeholder={`${t.modal_name} `} required value={formData.name} onChange={handleInputChange} />
+            <input type="email" name="email" placeholder={`${t.modal_email} `} required value={formData.email} onChange={handleInputChange} />
+            <input type="tel" name="tel" placeholder={`${t.modal_tel} `} required value={formData.tel} onChange={handleInputChange} />
+            <input type="text" name="subject" placeholder={`${t.modal_subject} `} required value={formData.subject} onChange={handleInputChange} />
+            <textarea name="message" placeholder={`${t.modal_message} `} required rows="4" value={formData.message} onChange={handleInputChange}></textarea>
             <button type="submit" disabled={isSending} style={{cursor: isSending ? 'not-allowed' : 'pointer'}}>
               {isSending ? t.modal_sending : t.modal_btn_send}
             </button>
@@ -118,6 +118,9 @@ export default function Footer() {
         <p className="footer__copyright">
           © {year} Lucas Inocêncio de França. {t.footer_rights}
         </p>
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+          <img src="https://komarev.com/ghpvc/?username=Lukinocencio-portfolio-next&label=VISITAS&color=blueviolet" alt="Contador de Visualizações" />
+        </div>
       </div>
     </footer>
   );
