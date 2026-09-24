@@ -59,6 +59,10 @@
         height: 3.6rem;
         cursor: pointer;
     }
+
+    body.dark-theme .navbar .navbar__content .navbar__mobile img.burger {
+        filter: invert(1);
+    }
     
     .navbar .navbar__content .navbar__mobile.active .mobile__links {
         display: flex;
