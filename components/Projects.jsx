@@ -168,7 +168,7 @@ export default function Projects() {
                   <p>{repo.description || "Sem descrição disponível."}</p>
                   <div style={{display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '15px'}}>
                     {getRepoTags(repo).map((tag, i) => (
-                      <span key={i} style={{fontSize: '1rem', backgroundColor: 'var(--tertiary-color)', color: '#ffffff', padding: '4px 10px', borderRadius: '12px'}}>
+                      <span key={i} style={{fontSize: '1.2rem', backgroundColor: 'var(--tertiary-color)', color: '#ffffff', padding: '6px 14px', borderRadius: '14px'}}>
                         {tag}
                       </span>
                     ))}
