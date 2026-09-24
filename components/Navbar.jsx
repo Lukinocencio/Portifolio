@@ -33,7 +33,7 @@ export default function Navbar() {
         {/* LOGO */}
         <div style={{ flex: '0 0 auto' }}>
           <a href="/">
-            <img src="/img/lfrancalogo.png" width="70" height="70" alt="Lucas França" />
+            <img src="/img/lfrancalogo.png" width="55" height="55" alt="Lucas França" />
           </a>
         </div>
 
