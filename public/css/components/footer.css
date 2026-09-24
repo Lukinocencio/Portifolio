@@ -1,5 +1,6 @@
 footer#footer {
     background-color: var(--dark-secondary-color);
+    scroll-margin-top: 15rem;
 }
 
 footer#footer .footer__content {
