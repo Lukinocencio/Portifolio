@@ -22,6 +22,16 @@ footer#footer .footer__content .footer__contact span {
     cursor: pointer;
 }
 
+footer .svg-icons {
+    filter: invert(1) brightness(2);
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+footer .svg-icons:hover {
+    opacity: 1;
+}
+
 footer#footer .footer__content ul li {
     display: inline-block;
 }
