@@ -10,8 +10,10 @@ const GitHubCalendar = dynamic(
 
 export default function GithubCalendarComponent() {
   return (
-    <div className="github-calendar-container" style={{ display: "flex", justifyContent: "center", marginTop: "40px", width: "100%", overflowX: "auto" }}>
-      <GitHubCalendar username="Lukinocencio" colorScheme="dark" />
+    <div className="github-calendar-wrapper" style={{ marginTop: "40px", width: "100%", overflowX: "auto", paddingBottom: "15px" }}>
+      <div style={{ display: "table", margin: "0 auto", padding: "0 15px" }}>
+        <GitHubCalendar username="Lukinocencio" colorScheme="dark" />
+      </div>
     </div>
   );
 }

@@ -49,20 +49,19 @@ export default function Navbar() {
         </div>
 
         {/* MOBILE OVERLAY */}
-        <div className={`navbar__mobile ${isMobileOpen ? "active" : ""}`}>
-          <div style={{display: 'flex', gap: '2rem', alignItems: 'center', position: 'absolute', right: '60px', top: '25px'}}>
-            <button onClick={toggleTheme} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '2rem', color: 'var(--text-color)'}}>
+        <div className={`navbar__mobile ${isMobileOpen ? "active" : ""}`} style={{display: 'flex', gap: '15px', alignItems: 'center'}}>
+            <button onClick={toggleTheme} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '2rem', color: 'var(--text-color)', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               {theme === "light" ? "🌙" : "☀️"}
             </button>
-            <button onClick={() => toggleLanguage(language === "pt" ? "en" : "pt")} style={{background: 'transparent', border: '2px solid var(--text-color)', color: 'var(--text-color)', borderRadius: '6px', padding: '4px 12px', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.4rem'}}>
-              {language === "pt" ? "EN" : "PT-BR"}
+            <button onClick={() => toggleLanguage(language === "pt" ? "en" : "pt")} style={{background: 'transparent', border: '2px solid var(--text-color)', color: 'var(--text-color)', borderRadius: '6px', padding: '4px 10px', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.2rem', minWidth: '40px'}}>
+              {language === "pt" ? "EN" : "PT"}
             </button>
-          </div>
           <img 
             src="/img/menu.svg" 
             alt="Menu" 
             className="burger" 
             onClick={() => setIsMobileOpen(!isMobileOpen)}
+            style={{marginLeft: '10px'}}
           />
           <ul className="mobile__links">
             <li><a href="#header" onClick={() => setIsMobileOpen(false)}>{t.nav_home}</a></li>
