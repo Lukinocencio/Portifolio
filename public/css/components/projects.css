@@ -18,6 +18,8 @@
     padding: 2rem 0 4rem 0;
     cursor: grab;
     -webkit-overflow-scrolling: touch;
+    /* Remove scroll-behavior que cria conflito com setScrollLeft em JS */
+    scroll-behavior: auto !important;
     /* Esconde barra de rolagem mas mantém funcionalidade */
     -ms-overflow-style: none;
     scrollbar-width: none;

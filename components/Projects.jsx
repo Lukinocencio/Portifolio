@@ -7,37 +7,34 @@ export default function Projects() {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Usamos Refs em vez de State para não causar re-renders pesados ao arrastar (liso)
   const scrollRef = useRef(null);
   const isDragging = useRef(false);
   const isHovered = useRef(false);
   const startX = useRef(0);
-  const scrollDirection = useRef(1); // 1 = Esquerda (padrão), -1 = Direita
+  const scrollDirection = useRef(1); // 1 = Esquerda, -1 = Direita
 
   useEffect(() => {
     fetch("https://api.github.com/users/Lukinocencio/repos?type=public&sort=updated&per_page=6")
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) {
-          // 3 blocos exatos: (Anterior Invisível) | (Centro Visível) | (Próximo Invisível)
+          // 3 blocos
           setRepos([...data, ...data, ...data]);
         }
         setLoading(false);
       })
       .catch((err) => {
-        console.error("Erro ao buscar projetos do github", err);
+        console.error("Erro ao buscar projetos", err);
         setLoading(false);
       });
   }, []);
 
-  // Centraliza o scroll perfeitamente no bloco do meio quando a página carrega
   useEffect(() => {
     if (!loading && scrollRef.current) {
       scrollRef.current.scrollLeft = scrollRef.current.scrollWidth / 3;
     }
   }, [loading, repos]);
 
-  // Loop super leve a 60FPS usando requestAnimationFrame
   useEffect(() => {
     if (loading || !scrollRef.current) return;
 
@@ -46,21 +43,18 @@ export default function Projects() {
       const el = scrollRef.current;
       if (!el) return;
 
-      // Auto scroll contínuo na direção que o usuário jogou
       if (!isDragging.current && !isHovered.current) {
-        el.scrollLeft += (1 * scrollDirection.current);
-      }
+        let newScrollLeft = el.scrollLeft + (1 * scrollDirection.current);
+        const singleBlockWidth = el.scrollWidth / 3;
 
-      // Loop Infinito Sem Fim (Costura perfeita da matemática)
-      const singleBlockWidth = el.scrollWidth / 3;
-      
-      // Se passou muito pra direita, teletransporta pra trás imperceptivelmente
-      if (el.scrollLeft >= singleBlockWidth * 2) {
-        el.scrollLeft = el.scrollLeft - singleBlockWidth;
-      } 
-      // Se passou muito pra esquerda, teletransporta pra frente imperceptivelmente
-      else if (el.scrollLeft <= 0) {
-        el.scrollLeft = el.scrollLeft + singleBlockWidth;
+        // Limites da animação
+        if (newScrollLeft >= singleBlockWidth * 2) {
+          newScrollLeft -= singleBlockWidth;
+        } else if (newScrollLeft <= 0) {
+          newScrollLeft += singleBlockWidth;
+        }
+        
+        el.scrollLeft = newScrollLeft;
       }
 
       animationId = requestAnimationFrame(loop);
@@ -70,7 +64,6 @@ export default function Projects() {
     return () => cancelAnimationFrame(animationId);
   }, [loading]);
 
-  // Mouse Handlers extremamente limpos para Drag perfeito
   const handleMouseDown = (e) => {
     isDragging.current = true;
     startX.current = e.pageX;
@@ -89,19 +82,26 @@ export default function Projects() {
   };
 
   const handleMouseMove = (e) => {
-    if (!isDragging.current) return;
+    if (!isDragging.current || !scrollRef.current) return;
     e.preventDefault();
     
     const x = e.pageX;
-    const delta = startX.current - x; // Pega a diferença arrastada
+    const delta = startX.current - x; 
     
     if (delta !== 0) {
-      scrollRef.current.scrollLeft += delta; // Move instantaneamente junto com o mouse
+      let newScrollLeft = scrollRef.current.scrollLeft + delta;
+      const singleBlockWidth = scrollRef.current.scrollWidth / 3;
+
+      // Realiza o loop ANTES de definir no DOM para evitar que o navegador trave em 0 ou max
+      if (newScrollLeft >= singleBlockWidth * 2) {
+        newScrollLeft -= singleBlockWidth;
+      } else if (newScrollLeft <= 0) {
+        newScrollLeft += singleBlockWidth;
+      }
       
-      // Memoriza a direção para o carrossel continuar rolando pra onde foi jogado!
+      scrollRef.current.scrollLeft = newScrollLeft;
       scrollDirection.current = delta > 0 ? 1 : -1;
-      
-      startX.current = x; // Atualiza a âncora frame a frame
+      startX.current = x; 
     }
   };
 
@@ -109,7 +109,6 @@ export default function Projects() {
     isHovered.current = true;
   };
 
-  // Previne arrastar a imagem nativamente
   const preventImageDrag = (e) => e.preventDefault();
 
   return (
