@@ -14,25 +14,34 @@
 
 .projects-marquee-container {
     width: 100%;
-    overflow: hidden;
+    overflow-x: auto;
     padding: 2rem 0 4rem 0;
+    cursor: grab;
+    -webkit-overflow-scrolling: touch;
+    /* Esconde barra de rolagem mas mantém funcionalidade */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.projects-marquee-container::-webkit-scrollbar {
+    display: none;
+}
+
+.projects-marquee-container.dragging {
+    cursor: grabbing;
 }
 
 .projects-marquee-content {
     display: flex;
     gap: 3rem;
     width: max-content;
-    /* 40 segundos para dar tempo de ler e clicar, pausando no hover */
-    animation: scrollProjects 50s linear infinite;
-    padding-left: 2rem; /* para não começar grudado se a tela for muito grande */
+    padding-left: 2rem;
+    /* A animação infinita agora é controlada via Javascript */
 }
 
-.projects-marquee-content:hover {
-    animation-play-state: paused;
-}
-
+/* Previne que o texto seja selecionado enquanto arrasta */
 .projects-marquee-content li {
-    flex: 0 0 350px; /* Cartão de projeto com tamanho fixo */
+    flex: 0 0 350px;
     display: flex;
     flex-direction: column;
     background: var(--light-tertiary-color);
@@ -40,6 +49,7 @@
     padding: 2rem;
     box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
+    user-select: none;
 }
 
 .projects-marquee-content li:hover {
@@ -62,6 +72,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    pointer-events: none; /* Impede conflito de arrastar imagem */
 }
 
 .projects-marquee-content li .projects__info {
@@ -102,15 +113,8 @@
     text-decoration: none;
 }
 
-/* Como triplicamos a lista (3 blocos idênticos), movemos 33.333% pra esquerda
-   para criar o loop infinito invisível */
-@keyframes scrollProjects {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-33.3333%); }
-}
-
 @media only screen and (max-width: 768px) {
     .projects-marquee-content li {
-        flex: 0 0 280px; /* Menor em telas pequenas */
+        flex: 0 0 280px;
     }
 }
