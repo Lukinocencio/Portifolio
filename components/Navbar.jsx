@@ -48,20 +48,20 @@ export default function Navbar() {
 
         {/* ACTIONS (RIGHT) - COM MESMO ESPAÇAMENTO */}
         <div className="navbar__actions" style={{ gap: '3rem', alignItems: 'center', flex: '0 0 auto' }}>
-          <button onPointerDown={(e) => e.preventDefault()} onClick={toggleTheme} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '2rem', color: 'var(--text-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0'}}>
+          <button aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"} onPointerDown={(e) => e.preventDefault()} onClick={toggleTheme} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '2rem', color: 'var(--text-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0', transition: 'transform 0.2s ease'}}>
             {theme === "light" ? "🌙" : "☀️"}
           </button>
-          <button onPointerDown={(e) => e.preventDefault()} onClick={() => toggleLanguage(language === "pt" ? "en" : "pt")} style={{background: 'transparent', border: '2px solid var(--text-color)', color: 'var(--text-color)', borderRadius: '6px', padding: '4px 12px', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.4rem', minWidth: '45px', textAlign: 'center'}}>
+          <button aria-label={language === "pt" ? "Mudar idioma para Inglês" : "Change language to Portuguese"} onPointerDown={(e) => e.preventDefault()} onClick={() => toggleLanguage(language === "pt" ? "en" : "pt")} style={{background: 'transparent', border: '2px solid var(--text-color)', color: 'var(--text-color)', borderRadius: '6px', padding: '4px 12px', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.4rem', minWidth: '45px', textAlign: 'center', transition: 'all 0.3s ease'}}>
             {language === "pt" ? "EN" : "PT-BR"}
           </button>
         </div>
 
         {/* MOBILE OVERLAY */}
         <div className={`navbar__mobile ${isMobileOpen ? "active" : ""}`}>
-            <button onPointerDown={(e) => e.preventDefault()} onClick={toggleTheme} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '2rem', color: 'var(--text-color)', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <button aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"} onPointerDown={(e) => e.preventDefault()} onClick={toggleTheme} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '2rem', color: 'var(--text-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'transform 0.2s ease'}}>
               {theme === "light" ? "🌙" : "☀️"}
             </button>
-            <button onPointerDown={(e) => e.preventDefault()} onClick={() => toggleLanguage(language === "pt" ? "en" : "pt")} style={{background: 'transparent', border: '2px solid var(--text-color)', color: 'var(--text-color)', borderRadius: '6px', padding: '4px 10px', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.2rem', minWidth: '40px'}}>
+            <button aria-label={language === "pt" ? "Mudar idioma para Inglês" : "Change language to Portuguese"} onPointerDown={(e) => e.preventDefault()} onClick={() => toggleLanguage(language === "pt" ? "en" : "pt")} style={{background: 'transparent', border: '2px solid var(--text-color)', color: 'var(--text-color)', borderRadius: '6px', padding: '4px 10px', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.2rem', minWidth: '40px', transition: 'all 0.3s ease'}}>
               {language === "pt" ? "EN" : "PT-BR"}
             </button>
           <img 

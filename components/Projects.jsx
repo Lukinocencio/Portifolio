@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useFilter } from "@/context/FilterContext";
 
@@ -35,8 +35,8 @@ function getRepoImage(repo) {
 }
 
 export default function Projects() {
-  const { t } = useLanguage();
-  const { selectedSkill } = useFilter();
+  const { t, language } = useLanguage();
+  const { selectedSkill, setSelectedSkill } = useFilter();
   const [allRepos, setAllRepos] = useState([]);
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -46,6 +46,14 @@ export default function Projects() {
   const isHovered = useRef(false);
   const startX = useRef(0);
   const scrollDirection = useRef(1); // 1 = Esquerda, -1 = Direita
+
+  const allAvailableTags = useMemo(() => {
+    const tags = new Set();
+    allRepos.forEach(repo => {
+      getRepoTags(repo).forEach(tag => tags.add(tag));
+    });
+    return Array.from(tags).sort();
+  }, [allRepos]);
 
   useEffect(() => {
     fetch("https://api.github.com/users/Lukinocencio/repos?type=public&sort=updated&per_page=30")
@@ -172,6 +180,40 @@ export default function Projects() {
       <div className="projects__content max-width">
         <h2 className="secondary-title">{t.projects_title}</h2>
         <p>{t.projects_desc}</p>
+
+        {allAvailableTags.length > 0 && (
+          <div className="projects__filter-tags" style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '30px', justifyContent: 'center' }}>
+            <button
+              onClick={() => setSelectedSkill(null)}
+              style={{
+                padding: '6px 14px', fontSize: '1.2rem', borderRadius: '20px', cursor: 'pointer',
+                background: !selectedSkill ? 'var(--primary-color)' : 'transparent',
+                color: !selectedSkill ? '#fff' : 'var(--text-color)',
+                border: !selectedSkill ? '2px solid var(--primary-color)' : '2px solid var(--text-color)',
+                transition: 'all 0.3s ease', fontWeight: 'bold'
+              }}
+              aria-label={language === "pt" ? "Mostrar todos os projetos" : "Show all projects"}
+            >
+              {language === "pt" ? "Todos" : "All"}
+            </button>
+            {allAvailableTags.map(tag => (
+              <button
+                key={tag}
+                onClick={() => setSelectedSkill(selectedSkill === tag ? null : tag)}
+                style={{
+                  padding: '6px 14px', fontSize: '1.2rem', borderRadius: '20px', cursor: 'pointer',
+                  background: selectedSkill === tag ? 'var(--primary-color)' : 'transparent',
+                  color: selectedSkill === tag ? '#fff' : 'var(--text-color)',
+                  border: selectedSkill === tag ? '2px solid var(--primary-color)' : '2px solid var(--text-color)',
+                  transition: 'all 0.3s ease', fontWeight: 'bold'
+                }}
+                aria-label={`Filtrar por ${tag}`}
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
       
       <div 
@@ -183,7 +225,7 @@ export default function Projects() {
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
       >
-        <ul className={`projects-marquee-content ${selectedSkill ? "filtered-view" : ""}`}>
+        <ul key={selectedSkill || 'all'} className={`projects-marquee-content ${selectedSkill ? "filtered-view" : ""}`}>
           {loading ? (
             <p style={{ textAlign: "center", width: "100%", fontSize: "1.6rem" }}>Carregando projetos...</p>
           ) : selectedSkill && repos.length === 0 ? (
