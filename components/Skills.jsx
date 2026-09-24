@@ -62,7 +62,7 @@ export default function Skills() {
           </li>
           <li className="skills__item">
             <div className="image-container">
-              <img src="/img/wampserver.png" alt="DevOps & Tools" />
+              <img src="/img/devops-icon.svg" alt="DevOps & Tools" />
             </div>
             <h3>{t.skills_devops}</h3>
             <p>{t.skills_devops_desc}</p>
