@@ -21,6 +21,19 @@ function getRepoTags(repo) {
   return uniqueTags.slice(0, 3);
 }
 
+const placeholders = [
+  "/img/ecommerce.png",
+  "/img/encryption.png",
+  "/img/mern-stack.png",
+  "/img/mernstack.jpg"
+];
+
+function getRepoImage(repo) {
+  // Returns a consistent placeholder image based on the repo ID
+  const index = (repo.id || 0) % placeholders.length;
+  return placeholders[index];
+}
+
 export default function Projects() {
   const { t } = useLanguage();
   const { selectedSkill } = useFilter();
@@ -182,7 +195,7 @@ export default function Projects() {
             repos.map((repo, index) => (
               <li key={`${repo.id}-${index}`} className={selectedSkill ? "highlighted-project" : ""}>
                 <div className="image">
-                  <img src="/img/ecommerce.png" alt="Repositório" onDragStart={preventImageDrag} />
+                  <img src={getRepoImage(repo)} alt={repo.name} onDragStart={preventImageDrag} />
                 </div>
                 <div className="projects__info">
                   <h3 className="tertiary-title">{repo.name}</h3>
