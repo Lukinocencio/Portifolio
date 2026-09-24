@@ -37,6 +37,11 @@ body.dark-theme .svg-icons {
   filter: invert(1) brightness(2);
 }
 
+/* Inverte a logo da navbar no tema escuro para ficar branca */
+body.dark-theme .navbar .navbar__content a img[alt="Lucas França"] {
+  filter: invert(1) brightness(2);
+}
+
 /* Força as tags de tecnologia a terem texto sempre branco, pois o fundo é azul (tertiary-color) */
 .tech-tags span {
   color: #ffffff !important;
