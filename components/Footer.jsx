@@ -92,11 +92,11 @@ export default function Footer() {
             {/* Honeypot: invisível para humanos, bots preenchem isso achando que é campo real */}
             <input type="text" name="_honeypot" style={{ display: 'none' }} tabIndex="-1" autoComplete="off" value={formData._honeypot} onChange={handleInputChange} />
             
-            <input type="text" name="name" placeholder={`${t.modal_name} `} required value={formData.name} onChange={handleInputChange} />
-            <input type="email" name="email" placeholder={`${t.modal_email} `} required value={formData.email} onChange={handleInputChange} />
-            <input type="tel" name="tel" placeholder={`${t.modal_tel} `} required value={formData.tel} onChange={handleInputChange} />
-            <input type="text" name="subject" placeholder={`${t.modal_subject} `} required value={formData.subject} onChange={handleInputChange} />
-            <textarea name="message" placeholder={`${t.modal_message} `} required rows="4" value={formData.message} onChange={handleInputChange}></textarea>
+            <input type="text" name="name" placeholder={`${t.modal_name} `} required maxLength={80} value={formData.name} onChange={handleInputChange} />
+            <input type="email" name="email" placeholder={`${t.modal_email} `} required maxLength={100} value={formData.email} onChange={handleInputChange} />
+            <input type="tel" name="tel" placeholder={`${t.modal_tel} `} required maxLength={15} value={formData.tel} onChange={handleInputChange} />
+            <input type="text" name="subject" placeholder={`${t.modal_subject} `} required maxLength={120} value={formData.subject} onChange={handleInputChange} />
+            <textarea name="message" placeholder={`${t.modal_message} `} required maxLength={1000} rows="4" value={formData.message} onChange={handleInputChange}></textarea>
             <button type="submit" disabled={isSending} style={{cursor: isSending ? 'not-allowed' : 'pointer'}}>
               {isSending ? t.modal_sending : t.modal_btn_send}
             </button>
