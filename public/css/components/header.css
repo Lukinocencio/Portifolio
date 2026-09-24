@@ -4,7 +4,7 @@ header {
     align-items: center;
     gap: 4rem;
     scroll-margin-top: 20rem;
-    margin-bottom: 12rem;
+    margin-bottom: 8rem;
 }
 
 header .header__left {
@@ -19,7 +19,7 @@ header .header__left p {
 }
 
 header .header__right {
-    flex: 0 0 auto; /* Impede que a direita encolha ou cresça ao mudar o idioma */
+    flex: 0 0 auto;
 }
 
 header .header__right .header__image {
@@ -43,7 +43,7 @@ header .header__right .header__image::after {
 header .header__right .header__image .lucas {
     border-radius: 0.5rem;
     width: auto;
-    height: 470px; /* Trava a altura fixamente */
+    height: 470px;
     max-width: 100%;
     object-fit: cover;
 }
@@ -69,7 +69,8 @@ header .header__right .header__image .background {
     header {
         flex-direction: column-reverse;
         text-align: center;
-        gap: 6rem;
+        gap: 4rem;
+        margin-bottom: 5rem;
     }
     header .header__left p {
         margin: 2rem auto 4rem;
