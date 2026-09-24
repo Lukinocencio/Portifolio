@@ -41,12 +41,17 @@ export default function Projects() {
   const scrollDirection = useRef(1); // 1 = Esquerda, -1 = Direita
 
   useEffect(() => {
-    fetch("https://api.github.com/users/Lukinocencio/repos?type=public&sort=updated&per_page=6")
+    fetch("https://api.github.com/users/Lukinocencio/repos?type=public&sort=updated&per_page=10")
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) {
-          // 3 blocos
-          setRepos([...data, ...data, ...data]);
+          // Filtra o repositório de profile (Lukinocencio) e mantém apenas os 6 mais recentes
+          const filteredRepos = data
+            .filter(repo => repo.name !== "Lukinocencio")
+            .slice(0, 6);
+            
+          // 3 blocos para o scroll infinito
+          setRepos([...filteredRepos, ...filteredRepos, ...filteredRepos]);
         }
         setLoading(false);
       })
