@@ -53,6 +53,7 @@
     .navbar .navbar__content .navbar__mobile {
         display: flex;
         align-items: center;
+        gap: 15px;
     }
     
     .navbar .navbar__content .navbar__mobile img {

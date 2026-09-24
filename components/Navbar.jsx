@@ -57,7 +57,7 @@ export default function Navbar() {
         </div>
 
         {/* MOBILE OVERLAY */}
-        <div className={`navbar__mobile ${isMobileOpen ? "active" : ""}`} style={{display: 'flex', gap: '15px', alignItems: 'center'}}>
+        <div className={`navbar__mobile ${isMobileOpen ? "active" : ""}`}>
             <button onPointerDown={(e) => e.preventDefault()} onClick={toggleTheme} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '2rem', color: 'var(--text-color)', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               {theme === "light" ? "🌙" : "☀️"}
             </button>
