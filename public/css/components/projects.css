@@ -115,6 +115,42 @@
     text-decoration: none;
 }
 
+.projects__tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.repo-tag {
+    font-size: 1.2rem;
+    background-color: var(--tertiary-color);
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 14px;
+    opacity: 0;
+    animation: fadeTagIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+.repo-tag:hover {
+    opacity: 1 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+@keyframes fadeTagIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 0.9; 
+        transform: translateY(0); 
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .projects-marquee-content li {
         flex: 0 0 280px;

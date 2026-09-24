@@ -166,9 +166,9 @@ export default function Projects() {
                 <div className="projects__info">
                   <h3 className="tertiary-title">{repo.name}</h3>
                   <p>{repo.description || "Sem descrição disponível."}</p>
-                  <div style={{display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '15px'}}>
+                  <div className="projects__tags">
                     {getRepoTags(repo).map((tag, i) => (
-                      <span key={i} style={{fontSize: '1.2rem', backgroundColor: 'var(--tertiary-color)', color: '#ffffff', padding: '6px 14px', borderRadius: '14px'}}>
+                      <span key={i} className="repo-tag" style={{ animationDelay: `${i * 0.15}s` }}>
                         {tag}
                       </span>
                     ))}
