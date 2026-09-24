@@ -6,7 +6,7 @@ export default function Footer() {
   const { t } = useLanguage();
   const [year, setYear] = useState(new Date().getFullYear());
   const [copied, setCopied] = useState(false);
-  const [formData, setFormData] = useState({ name: "", email: "", tel: "", subject: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", tel: "", subject: "", message: "", _honeypot: "" });
   const [isSending, setIsSending] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("");
 
@@ -21,13 +21,35 @@ export default function Footer() {
   };
 
   const handleInputChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    
+    if (name === "tel") {
+      let v = value.replace(/\D/g, "");
+      if (v.length > 11) v = v.slice(0, 11);
+      
+      if (v.length > 2) {
+        v = `(${v.slice(0, 2)}) ${v.slice(2)}`;
+      }
+      if (v.length > 9) {
+        v = `${v.slice(0, 10)}-${v.slice(10)}`;
+      }
+      setFormData({ ...formData, [name]: v });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSending(true);
     setSubmitStatus("");
+
+    // Impede o envio se o bot preencheu o campo armadilha
+    if (formData._honeypot) {
+      setIsSending(false);
+      setSubmitStatus("Formulário bloqueado por segurança (Spam detectado).");
+      return;
+    }
 
     try {
       const response = await fetch('/api/send', {
@@ -40,7 +62,7 @@ export default function Footer() {
 
       if (response.ok) {
         setSubmitStatus(t.modal_success);
-        setFormData({ name: "", email: "", tel: "", subject: "", message: "" });
+        setFormData({ name: "", email: "", tel: "", subject: "", message: "", _honeypot: "" });
       } else {
         const errorData = await response.json();
         setSubmitStatus(`Erro: ${errorData.error || "Falha no envio"}`);
@@ -67,15 +89,18 @@ export default function Footer() {
         <div className="contact-form-container">
           <h3 style={{color: 'var(--white)', marginBottom: '15px'}}>{t.footer_btn_contact}</h3>
           <form className="contact-form" onSubmit={handleSubmit}>
-            <input type="text" name="name" placeholder={t.modal_name} required value={formData.name} onChange={handleInputChange} />
-            <input type="email" name="email" placeholder={t.modal_email} required value={formData.email} onChange={handleInputChange} />
-            <input type="tel" name="tel" placeholder={t.modal_tel} required value={formData.tel} onChange={handleInputChange} />
-            <input type="text" name="subject" placeholder={t.modal_subject} required value={formData.subject} onChange={handleInputChange} />
-            <textarea name="message" placeholder={t.modal_message} required rows="4" value={formData.message} onChange={handleInputChange}></textarea>
+            {/* Honeypot: invisível para humanos, bots preenchem isso achando que é campo real */}
+            <input type="text" name="_honeypot" style={{ display: 'none' }} tabIndex="-1" autoComplete="off" value={formData._honeypot} onChange={handleInputChange} />
+            
+            <input type="text" name="name" placeholder={`${t.modal_name} (Ex: João da Silva)`} required value={formData.name} onChange={handleInputChange} />
+            <input type="email" name="email" placeholder={`${t.modal_email} (Ex: joao@email.com)`} required value={formData.email} onChange={handleInputChange} />
+            <input type="tel" name="tel" placeholder={`${t.modal_tel} (Ex: (11) 99999-9999)`} required value={formData.tel} onChange={handleInputChange} />
+            <input type="text" name="subject" placeholder={`${t.modal_subject} (Ex: Proposta de Freelance)`} required value={formData.subject} onChange={handleInputChange} />
+            <textarea name="message" placeholder={`${t.modal_message} (Ex: Olá Lucas, gostaria de conversar sobre...)`} required rows="4" value={formData.message} onChange={handleInputChange}></textarea>
             <button type="submit" disabled={isSending} style={{cursor: isSending ? 'not-allowed' : 'pointer'}}>
               {isSending ? t.modal_sending : t.modal_btn_send}
             </button>
-            {submitStatus && <p style={{color: submitStatus.includes("Erro") ? "#ff6b6b" : "#4caf50", marginTop: "10px"}}>{submitStatus}</p>}
+            {submitStatus && <p style={{color: submitStatus.includes("Erro") || submitStatus.includes("bloqueado") ? "#ff6b6b" : "#4caf50", marginTop: "10px"}}>{submitStatus}</p>}
           </form>
         </div>
         <ul className="mb-l">

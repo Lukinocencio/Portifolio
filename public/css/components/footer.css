@@ -60,6 +60,18 @@ footer .footer__content .footer__copyright {
     color: #a0a5b1;
 }
 
+/* Corrige o fundo branco/amarelo do autofill do navegador */
+.contact-form input:-webkit-autofill,
+.contact-form input:-webkit-autofill:hover, 
+.contact-form input:-webkit-autofill:focus, 
+.contact-form textarea:-webkit-autofill,
+.contact-form textarea:-webkit-autofill:hover,
+.contact-form textarea:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px var(--dark-secondary-color) inset !important;
+    -webkit-text-fill-color: var(--white) !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 .contact-form button {
     background: var(--tertiary-color);
     color: var(--white);
