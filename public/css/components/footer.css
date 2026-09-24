@@ -1,36 +1,36 @@
-footer {
+footer#footer {
     background-color: var(--dark-secondary-color);
 }
 
-footer .footer__content {
+footer#footer .footer__content {
     text-align: center;
     padding: 10rem 2rem 1rem;
     max-width: 47rem;
     margin: 0 auto;
 }
 
-footer .footer__content .tertiary-title,
-footer .footer__content p.mb-m,
-footer .footer__content .footer__contact span.email {
+footer#footer .footer__content .tertiary-title,
+footer#footer .footer__content p.mb-m,
+footer#footer .footer__content .footer__contact span.email {
     color: #ffffff;
 }
 
-footer .footer__content .footer__contact span {
+footer#footer .footer__content .footer__contact span {
     display: block;
     font-weight: 500;
     cursor: pointer;
 }
 
-footer .footer__content ul li {
+footer#footer .footer__content ul li {
     display: inline-block;
 }
 
-footer .footer__content ul a {
+footer#footer .footer__content ul a {
     display: inline-block;
     padding: 1rem;
 }
 
-footer .footer__content .footer__copyright {
+footer#footer .footer__content .footer__copyright {
     font-size: clamp(1rem, 3.5vw, 1.4rem);
     white-space: nowrap;
     color: rgba(255, 255, 255, 0.7);
@@ -132,13 +132,13 @@ body.dark-theme .contact-form textarea:-webkit-autofill:focus {
 }
 
 @media only screen and (max-width: 768px) {
-    footer .footer__content {
+    footer#footer .footer__content {
         padding: 6rem 2rem 1rem;
     }
-    footer .footer__content .footer__copyright {
+    footer#footer .footer__content .footer__copyright {
         white-space: normal;
     }
-    footer .footer__content .footer__rights {
+    footer#footer .footer__content .footer__rights {
         display: block;
         margin-top: 5px;
     }

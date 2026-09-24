@@ -22,3 +22,11 @@
         padding-bottom: 6rem;
     }
 }
+
+
+/* Fix react-github-calendar text issues */
+.github-calendar-wrapper text, .github-calendar-wrapper span {
+  background: transparent !important;
+  color: var(--text-color) !important;
+  fill: var(--text-color) !important;
+}
