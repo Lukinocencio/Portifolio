@@ -18,6 +18,14 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsMobileOpen(false);
+  };
+
   return (
     <nav className={`navbar ${isScrolled ? "active" : ""}`}>
       <div className="navbar__content max-width mb-0" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -31,11 +39,11 @@ export default function Navbar() {
 
         {/* LINKS (CENTERED) */}
         <ul className="navbar__links" style={{ flex: '1', display: 'flex', justifyContent: 'center', gap: '3rem', margin: 0, padding: 0 }}>
-          <li><a href="#header">{t.nav_home}</a></li>
-          <li><a href="#about">{t.nav_about}</a></li>
-          <li><a href="#skills">{t.nav_skills}</a></li>
-          <li><a href="#projects">{t.nav_projects}</a></li>
-          <li><a href="#footer">{t.nav_contact}</a></li>
+          <li><a onClick={() => scrollTo("header")}>{t.nav_home}</a></li>
+          <li><a onClick={() => scrollTo("about")}>{t.nav_about}</a></li>
+          <li><a onClick={() => scrollTo("skills")}>{t.nav_skills}</a></li>
+          <li><a onClick={() => scrollTo("projects")}>{t.nav_projects}</a></li>
+          <li><a onClick={() => scrollTo("footer")}>{t.nav_contact}</a></li>
         </ul>
 
         {/* ACTIONS (RIGHT) - COM MESMO ESPAÇAMENTO */}
@@ -64,11 +72,11 @@ export default function Navbar() {
             style={{marginLeft: '10px'}}
           />
           <ul className="mobile__links">
-            <li><a href="#header" onClick={() => setIsMobileOpen(false)}>{t.nav_home}</a></li>
-            <li><a href="#about" onClick={() => setIsMobileOpen(false)}>{t.nav_about}</a></li>
-            <li><a href="#skills" onClick={() => setIsMobileOpen(false)}>{t.nav_skills}</a></li>
-            <li><a href="#projects" onClick={() => setIsMobileOpen(false)}>{t.nav_projects}</a></li>
-            <li><a href="#footer" onClick={() => setIsMobileOpen(false)}>{t.nav_contact}</a></li>
+            <li><a onClick={() => scrollTo("header")}>{t.nav_home}</a></li>
+            <li><a onClick={() => scrollTo("about")}>{t.nav_about}</a></li>
+            <li><a onClick={() => scrollTo("skills")}>{t.nav_skills}</a></li>
+            <li><a onClick={() => scrollTo("projects")}>{t.nav_projects}</a></li>
+            <li><a onClick={() => scrollTo("footer")}>{t.nav_contact}</a></li>
           </ul>
         </div>
       </div>

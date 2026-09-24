@@ -10,7 +10,7 @@ export default function Header() {
         <h1>{t.header_title}</h1>
         <p>{t.header_subtitle}</p>
         <div className="header__buttons">
-          <a href="#about" className="btn btn-primary">{t.header_btn_more}</a>
+          <a onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })} className="btn btn-primary" style={{cursor: 'pointer'}}>{t.header_btn_more}</a>
           <a href="/cv/curriculo.pdf" download className="btn btn-primary btn-cv">
             {t.header_btn_cv}
           </a>
