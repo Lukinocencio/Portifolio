@@ -52,7 +52,7 @@ export default function Navbar() {
             {theme === "light" ? "🌙" : "☀️"}
           </button>
           <button onPointerDown={(e) => e.preventDefault()} onClick={() => toggleLanguage(language === "pt" ? "en" : "pt")} style={{background: 'transparent', border: '2px solid var(--text-color)', color: 'var(--text-color)', borderRadius: '6px', padding: '4px 12px', cursor: 'pointer', fontWeight: 'bold', fontSize: '1.4rem', minWidth: '45px', textAlign: 'center'}}>
-            {language === "pt" ? "EN" : "PT-BR"}
+            {language === "pt" ? "EN" : "PT"}
           </button>
         </div>
 
