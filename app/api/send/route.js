@@ -50,6 +50,6 @@ export async function POST(req) {
 
   } catch (error) {
     console.error("Erro ao enviar o e-mail: ", error);
-    return NextResponse.json({ error: "Erro interno ao enviar e-mail." }, { status: 500 });
+    return NextResponse.json({ error: `Erro SMTP: ${error.message}` }, { status: 500 });
   }
 }

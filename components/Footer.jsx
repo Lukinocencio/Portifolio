@@ -42,10 +42,11 @@ export default function Footer() {
         setSubmitStatus(t.modal_success);
         setFormData({ name: "", email: "", tel: "", subject: "", message: "" });
       } else {
-        setSubmitStatus("Erro ao enviar. Tente novamente mais tarde.");
+        const errorData = await response.json();
+        setSubmitStatus(`Erro: ${errorData.error || "Falha no envio"}`);
       }
     } catch (error) {
-      setSubmitStatus("Erro ao enviar. Tente novamente mais tarde.");
+      setSubmitStatus(`Erro de conexão: ${error.message}`);
     }
 
     setIsSending(false);
