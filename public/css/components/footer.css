@@ -25,6 +25,7 @@ footer .footer__content ul a {
 
 footer .footer__content .footer__copyright {
     font-size: 1.4rem;
+    white-space: nowrap;
 }
 
 /* Formulário Inline */
