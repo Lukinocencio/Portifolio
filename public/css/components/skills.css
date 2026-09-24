@@ -1,8 +1,8 @@
 .skills {
     background-color: var(--light-tertiary-color);
     scroll-margin-top: 15rem;
-    padding-top: 6rem;
-    padding-bottom: 8rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
 }
 
 .skills .skills__content { 
@@ -61,7 +61,7 @@
 
 @media only screen and (max-width: 768px) {
     .skills {
-        padding-top: 4rem;
+        padding-top: 6rem;
         padding-bottom: 6rem;
     }
     .skills .skills__content ul {

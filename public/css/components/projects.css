@@ -1,6 +1,6 @@
 .projects {
-    margin-top: 14rem;
-    margin-bottom: 14rem;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
     scroll-margin-top: 15rem;
     overflow-x: hidden;
     width: 100%;
@@ -118,8 +118,8 @@
 
 @media only screen and (max-width: 768px) {
     .projects {
-        margin-top: 8rem;
-        margin-bottom: 8rem;
+        margin-top: 6rem;
+        margin-bottom: 6rem;
     }
     .projects-marquee-content li {
         flex: 0 0 280px;
