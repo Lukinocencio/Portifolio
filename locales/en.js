@@ -55,5 +55,9 @@ export const en = {
   modal_message: "Enter your Message",
   modal_btn_send: "Send",
   modal_sending: "Sending...",
-  modal_success: "Sent successfully!"
+  modal_success: "Sent successfully!",
+
+  // Contributions
+  contributions_title: "My contributions",
+  contributions_desc: "Track my activity and contributions history on GitHub."
 };

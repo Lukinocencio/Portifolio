@@ -1,16 +1,1 @@
-"use client";
-import React from "react";
-import GithubCalendarComponent from "./GithubCalendar";
-
-export default function Contributions() {
-  return (
-    <section id="contributions" className="contributions">
-      <div className="contributions__content max-width">
-        <h2 className="secondary-title">Minhas contribuições</h2>
-        <p className="description">Acompanhe meu histórico de atividades e contribuições no GitHub.</p>
-      </div>
-      
-      <GithubCalendarComponent />
-    </section>
-  );
-}
+﻿"use client";`nimport React from "react";`nimport GithubCalendarComponent from "./GithubCalendar";`nimport { useLanguage } from "@/context/LanguageContext";`n`nexport default function Contributions() {`n  const { t } = useLanguage();`n`n  return (`n    <section id="contributions" className="contributions">`n      <div className="contributions__content max-width">`n        <h2 className="secondary-title">{t.contributions_title}</h2>`n        <p className="description">{t.contributions_desc}</p>`n      </div>`n      `n      <GithubCalendarComponent />`n    </section>`n  );`n}
