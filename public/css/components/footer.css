@@ -9,6 +9,18 @@ footer .footer__content {
     margin: 0 auto;
 }
 
+footer .footer__content .tertiary-title,
+footer .footer__content p.mb-m,
+footer .footer__content .footer__contact span.email {
+    color: var(--primary-color);
+}
+
+body.dark-theme footer .footer__content .tertiary-title,
+body.dark-theme footer .footer__content p.mb-m,
+body.dark-theme footer .footer__content .footer__contact span.email {
+    color: #ffffff;
+}
+
 footer .footer__content .footer__contact span {
     display: block;
     font-weight: 500;
