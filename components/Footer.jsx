@@ -116,7 +116,7 @@ export default function Footer() {
           </li>
         </ul>
         <p className="footer__copyright">
-          © {year} Lucas Inocêncio de França. {t.footer_rights}
+          © {year} Lucas Inocêncio de França. <span className="footer__rights">{t.footer_rights}</span>
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
           <img src="https://komarev.com/ghpvc/?username=Lukinocencio-portfolio-next&label=VISITAS&color=blueviolet" alt="Contador de Visualizações" />

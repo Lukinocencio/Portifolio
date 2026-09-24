@@ -143,4 +143,8 @@ body.dark-theme .contact-form textarea:-webkit-autofill:focus {
     footer .footer__content .footer__copyright {
         white-space: normal;
     }
+    footer .footer__content .footer__rights {
+        display: block;
+        margin-top: 5px;
+    }
 }

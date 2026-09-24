@@ -39,7 +39,7 @@ export default function Navbar() {
         </ul>
 
         {/* ACTIONS (RIGHT) - COM MESMO ESPAÇAMENTO */}
-        <div className="navbar__actions" style={{ display: 'flex', gap: '3rem', alignItems: 'center', flex: '0 0 auto' }}>
+        <div className="navbar__actions" style={{ gap: '3rem', alignItems: 'center', flex: '0 0 auto' }}>
           <button onPointerDown={(e) => e.preventDefault()} onClick={toggleTheme} style={{background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '2rem', color: 'var(--text-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0'}}>
             {theme === "light" ? "🌙" : "☀️"}
           </button>

@@ -36,6 +36,10 @@
     display: none;
 }
 
+.navbar .navbar__content .navbar__actions {
+    display: flex;
+}
+
 @media only screen and (max-width: 768px) {
     .navbar .navbar__content .navbar__links {
         display: none !important;
