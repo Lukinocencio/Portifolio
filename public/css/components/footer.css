@@ -70,6 +70,12 @@ body.dark-theme .contact-form-container h3 {
     text-align: center;
 }
 
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+    max-height: 400px;
+}
+
 body.dark-theme .contact-form input,
 body.dark-theme .contact-form textarea {
     color: #ffffff;
