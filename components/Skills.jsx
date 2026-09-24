@@ -26,7 +26,7 @@ export default function Skills() {
         <ul>
           <li className="skills__item">
             <div className="image-container">
-              <img src="/img/ecommerce.png" alt="Front-end" />
+              <img src="/img/frontend-icon.svg" alt="Front-end" />
             </div>
             <h3>{t.skills_frontend}</h3>
             <p>{t.skills_frontend_desc}</p>
@@ -38,7 +38,7 @@ export default function Skills() {
           </li>
           <li className="skills__item">
             <div className="image-container">
-              <img src="/img/mernstack.jpg" alt="Back-end" />
+              <img src="/img/backend-icon.svg" alt="Back-end" />
             </div>
             <h3>{t.skills_backend}</h3>
             <p>{t.skills_backend_desc}</p>
@@ -50,7 +50,7 @@ export default function Skills() {
           </li>
           <li className="skills__item">
             <div className="image-container">
-              <img src="/img/encryption.png" alt="Database" />
+              <img src="/img/database-icon.svg" alt="Database" />
             </div>
             <h3>{t.skills_database}</h3>
             <p>{t.skills_database_desc}</p>
