@@ -14,7 +14,7 @@ export default function Footer() {
     setYear(new Date().getFullYear());
   }, []);
 
-  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contato@harmonysoftware.com.br";
+  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "lucasifranca@outlook.com";
 
   const copyEmail = () => {
     navigator.clipboard.writeText(contactEmail);
