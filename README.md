@@ -43,8 +43,8 @@ O projeto foi construído para atender aos seguintes requisitos de negócio e t�
 
 ## 🚀 Padrão de Deploy (CI/CD)
 
-1. Commits no repositório privado (`portifolio-next`) no branch `main` ativam automaticamente os webhooks da **Vercel**, que recompila o site Next.js e injeta variáveis de ambiente, disponibilizando o build em produção.
-2. A sincronização de código com o repositório público (github.com/Lukinocencio/Portifolio) exclui estritamente diretórios do motor (node_modules, .next) e credenciais privadas (.env). O código aberto serve para fins de portfólio.
+1. Commits no repositório privado (`portfolio-next`) no branch `main` ativam automaticamente os webhooks da **Vercel**, que recompila o site Next.js e injeta variáveis de ambiente, disponibilizando o build em produção.
+2. A sincronização de código com o repositório público (github.com/Lukinocencio/Portfolio) exclui estritamente diretórios do motor (node_modules, .next) e credenciais privadas (.env). O código aberto serve para fins de portfólio.
 3. Mensagens de commit **sempre** devem ser escritas em português claro e objetivo, utilizando os prefixos convencionais de commit (ex: `fix:`, `feat:`, `refactor:`).
 
 ---

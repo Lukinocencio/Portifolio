@@ -14,8 +14,10 @@ export default function Footer() {
     setYear(new Date().getFullYear());
   }, []);
 
+  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contato@harmonysoftware.com.br";
+
   const copyEmail = () => {
-    navigator.clipboard.writeText("lucasifranca@outlook.com");
+    navigator.clipboard.writeText(contactEmail);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -82,7 +84,7 @@ export default function Footer() {
         <p className="mb-m">{t.footer_desc}</p>
         <div className="footer__contact mb-m">
           <span className="email" onClick={copyEmail} title={t.footer_copy_msg}>
-            lucasifranca@outlook.com
+            {contactEmail}
           </span>
           {copied && <span style={{color: 'var(--tertiary-color)', marginLeft: '10px'}}>{t.footer_copied_msg}</span>}
         </div>

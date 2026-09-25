@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Portifólio de Lucas Inocêncio de França",
+  title: "Portfolio de Lucas Inocêncio de França",
   description: "Desenvolvedor Back-end e Full-Stack",
   icons: {
     icon: '/img/lfrancalogo.png',

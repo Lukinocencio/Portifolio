@@ -92,7 +92,7 @@ export async function POST(req) {
         from: process.env.EMAIL_FROM, // Seu no-reply@harmonysoftware.com.br
         to: process.env.EMAIL_TO,     // Destinos separados por vírgula
         replyTo: email,               // Original email (não escapado para que o 'Responder' funcione corretamente)
-        subject: `Portifólio - Contato de ${safeName}`,
+        subject: `Portfolio - Contato de ${safeName}`,
         html: output
     };
 
